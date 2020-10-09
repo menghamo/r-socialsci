@@ -1,0 +1,1281 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2020-10-09 11:36:08 +0000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+    <link rel="license" href="#license-info" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/dc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/dc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/dc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/dc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/dc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/dc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/dc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/dc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Data Carpentry - R for Social Scientists"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/dc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/dc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/dc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/dc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/dc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  <title>
+  Data Visualisation with ggplot2 &ndash; R for Social Scientists
+  </title>
+
+  </head>
+  <body>
+
+    
+
+
+
+
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="http://datacarpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/dc-icon-black.svg" alt="Data Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            
+            <li><a href="../00-intro/index.html">Before we Start</a></li>
+            
+            
+            <li><a href="../01-intro-to-r/index.html">Introduction to R</a></li>
+            
+            
+            <li><a href="../02-starting-with-data/index.html">Starting with Data</a></li>
+            
+            
+            <li><a href="../03-dplyr-tidyr/index.html">Data Wrangling with dplyr and tidyr</a></li>
+            
+            
+            <li><a href="../04-ggplot2/index.html">Data Visualisation with ggplot2</a></li>
+            
+            
+            <li><a href="../0x-json/index.html">Processing JSON data</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/index.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+        
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            
+            <li><a href="../about/index.html">About</a></li>
+            
+            
+            <li><a href="../data-visualisation-handout/index.html">Code Handout - Data Visualisation with ggplot2</a></li>
+            
+            
+            <li><a href="../data-wrangling-handout/index.html">Code Handout</a></li>
+            
+            
+            <li><a href="../discuss/index.html">Discussion</a></li>
+            
+            
+            <li><a href="../figures/index.html">Figures</a></li>
+            
+            
+            <li><a href="../guide/index.html">Instructor Notes</a></li>
+            
+            
+            <li><a href="../intro-R-handout/index.html">Code Handout - Introduction to R</a></li>
+            
+            
+            <li><a href="../starting-with-data-handout/index.html">Code Handout - Starting with Data</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	
+	<li><a href="/edit//_episodes_rmd/04-ggplot2.Rmd" data-checker-ignore>Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../03-dplyr-tidyr/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">R for Social Scientists</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../0x-json/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Data Visualisation with ggplot2</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 80 min
+      <br/>
+      <strong>Exercises:</strong> 35 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>What are the components of a ggplot?</p>
+</li>
+	
+	<li><p>How do I create scatterplots, boxplots, and barplots?</p>
+</li>
+	
+	<li><p>How can I change the aesthetics (ex. colour, transparency) of my plot?</p>
+</li>
+	
+	<li><p>How can I create multiple plots at once?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Produce scatter plots, boxplots, and time series plots using ggplot.</p>
+</li>
+	
+	<li><p>Set universal plot settings.</p>
+</li>
+	
+	<li><p>Describe what faceting is and apply faceting in ggplot.</p>
+</li>
+	
+	<li><p>Modify the aesthetics of an existing ggplot plot (including axis labels and colour).</p>
+</li>
+	
+	<li><p>Build complex and customized plots from data in a data frame.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>We start by loading the required package. <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> is also included in the
+<strong><code class="language-plaintext highlighter-rouge">tidyverse</code></strong> package.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If not still in the workspace, load the data we saved in the previous lesson.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data_output/interviews_plotting.csv"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+── Column specification ────────────────────────────────────────────────────────
+cols(
+  .default = col_logical(),
+  key_ID = col_double(),
+  village = col_character(),
+  interview_date = col_datetime(format = ""),
+  no_membrs = col_double(),
+  years_liv = col_double(),
+  respondent_wall_type = col_character(),
+  rooms = col_double(),
+  memb_assoc = col_character(),
+  affect_conflicts = col_character(),
+  liv_count = col_double(),
+  no_meals = col_double(),
+  instanceID = col_character(),
+  number_months_lack_food = col_double(),
+  number_items = col_double()
+)
+ℹ Use `spec()` for the full column specifications.
+</code></pre></div></div>
+
+<p>If you were unable to complete the previous lesson or did not save the data,
+then you can create it now.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">interviews</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="c1">## pivot wider by items_owned</span><span class="w">
+  </span><span class="n">separate_rows</span><span class="p">(</span><span class="n">items_owned</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">";"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="c1">## if there were no items listed, changing NA to no_listed_items</span><span class="w">
+  </span><span class="n">replace_na</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">items_owned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"no_listed_items"</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">items_owned_logical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items_owned</span><span class="p">,</span><span class="w"> 
+              </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items_owned_logical</span><span class="p">,</span><span class="w"> 
+              </span><span class="n">values_fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">items_owned_logical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="c1">## pivot wider by months_lack_food</span><span class="w">
+  </span><span class="n">separate_rows</span><span class="p">(</span><span class="n">months_lack_food</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">";"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">months_lack_food_logical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">months_lack_food</span><span class="p">,</span><span class="w"> 
+              </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">months_lack_food_logical</span><span class="p">,</span><span class="w"> 
+              </span><span class="n">values_fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">months_lack_food_logical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="c1">## add some summary columns</span><span class="w">
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">number_months_lack_food</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rowSums</span><span class="p">(</span><span class="n">select</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">Jan</span><span class="o">:</span><span class="n">May</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">number_items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rowSums</span><span class="p">(</span><span class="n">select</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">bicycle</span><span class="o">:</span><span class="n">car</span><span class="p">)))</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in eval(lhs, parent, parent): object 'interviews' not found
+</code></pre></div></div>
+
+<h2 id="plotting-with-ggplot2">Plotting with <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong></h2>
+
+<p><strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> is a plotting package that makes it simple to create complex plots
+from data stored in a data frame. It provides a programmatic interface for
+specifying what variables to plot, how they are displayed, and general visual
+properties. Therefore, we only need minimal changes if the underlying data
+change or if we decide to change from a bar plot to a scatterplot. This helps in
+creating publication quality plots with minimal amounts of adjustments and
+tweaking.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> functions work best with data in the ‘long’ format, i.e., a column for every
+dimension, and a row for every observation. Well-structured data will save you
+lots of time when making figures with <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong></p>
+
+<p>ggplot graphics are built step by step by adding new elements. Adding layers in
+this fashion allows for extensive flexibility and customization of plots.</p>
+
+<p>To build a ggplot, we will use the following basic template that can be used for different types of plots:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;DATA&gt; %&gt;%
+    ggplot(aes(&lt;MAPPINGS&gt;)) +
+    &lt;GEOM_FUNCTION&gt;()
+</code></pre></div></div>
+<p>Remember from the last lesson that the pipe operator <code class="language-plaintext highlighter-rouge">%&gt;%</code> places the result of the previous line(s) into the first argument of the function. <strong><code class="language-plaintext highlighter-rouge">ggplot</code></strong> is a function that expects a data frame to be the first argument. This allows for us to change from specifying the <code class="language-plaintext highlighter-rouge">data =</code> argument within the <code class="language-plaintext highlighter-rouge">ggplot</code> function and instead pipe the data into the function.</p>
+
+<ul>
+  <li>use the <code class="language-plaintext highlighter-rouge">ggplot()</code> function and bind the plot to a specific data frame.</li>
+</ul>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>define a mapping (using the aesthetic (<code class="language-plaintext highlighter-rouge">aes</code>) function), by selecting the variables to be plotted and specifying how to present them in the graph, e.g. as x/y positions or characteristics such as size, shape, color, etc.</li>
+</ul>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>add ‘geoms’ – graphical representations of the data in the plot (points,
+lines, bars). <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> offers many different geoms; we will use some
+common ones today, including:</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">geom_point()</code> for scatter plots, dot plots, etc.</li>
+      <li><code class="language-plaintext highlighter-rouge">geom_boxplot()</code> for, well, boxplots!</li>
+      <li><code class="language-plaintext highlighter-rouge">geom_line()</code> for trend lines, time series, etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>To add a geom to the plot use the <code class="language-plaintext highlighter-rouge">+</code> operator. Because we have two continuous variables, let’s use <code class="language-plaintext highlighter-rouge">geom_point()</code> first:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_point</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-first-ggplot-1.png" title="plot of chunk first-ggplot" alt="plot of chunk first-ggplot" width="612" style="display: block; margin: auto;" /></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">+</code> in the <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> package is particularly useful because it allows
+you to modify existing <code class="language-plaintext highlighter-rouge">ggplot</code> objects. This means you can easily set up plot
+templates and conveniently explore different types of plots, so the above plot
+can also be generated with code like this, similar to the “intermediate steps” 
+approach in the previous lesson:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Assign plot to a variable</span><span class="w">
+</span><span class="n">interviews_plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">))</span><span class="w">
+
+</span><span class="c1"># Draw the plot as a dot plot</span><span class="w">
+</span><span class="n">interviews_plot</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_point</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<blockquote>
+  <h2 id="notes">Notes</h2>
+
+  <ul>
+    <li>Anything you put in the <code class="language-plaintext highlighter-rouge">ggplot()</code> function can be seen by any geom layers
+that you add (i.e., these are universal plot settings). This includes the x-
+and y-axis mapping you set up in <code class="language-plaintext highlighter-rouge">aes()</code>.</li>
+    <li>You can also specify mappings for a given geom independently of the mapping
+defined globally in the <code class="language-plaintext highlighter-rouge">ggplot()</code> function.</li>
+    <li>The <code class="language-plaintext highlighter-rouge">+</code> sign used to add new layers must be placed at the end of the line
+containing the <em>previous</em> layer. If, instead, the <code class="language-plaintext highlighter-rouge">+</code> sign is added at the
+beginning of the line containing the new layer, <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> will not add
+the new layer and will return an error message.</li>
+  </ul>
+</blockquote>
+
+<div class="language-r callout highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## This is the correct syntax for adding layers</span><span class="w">
+</span><span class="n">interviews_plot</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_point</span><span class="p">()</span><span class="w">
+
+</span><span class="c1">## This will not add the new layer and will return an error message</span><span class="w">
+</span><span class="n">interviews_plot</span><span class="w">
+</span><span class="o">+</span><span class="w"> </span><span class="n">geom_point</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="building-your-plots-iteratively">Building your plots iteratively</h2>
+
+<p>Building plots with <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> is typically an iterative process. We start by
+defining the dataset we’ll use, lay out the axes, and choose a geom:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_point</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-create-ggplot-object-1.png" title="plot of chunk create-ggplot-object" alt="plot of chunk create-ggplot-object" width="612" style="display: block; margin: auto;" /></p>
+
+<p>Then, we start modifying this plot to extract more information from it. For
+instance, when inspecting the plot we notice that points only appear at the 
+intersection of whole numbers of <code class="language-plaintext highlighter-rouge">no_membrs</code> and <code class="language-plaintext highlighter-rouge">number_items</code>. Also, from a 
+rough estimate, it looks like there are far fewer dots on the plot than there 
+rows in our dataframe. This should lead us to believe that there may be multiple
+observations plotted on top of each other (e.g. three observations where 
+<code class="language-plaintext highlighter-rouge">no_membrs</code> is 3 and <code class="language-plaintext highlighter-rouge">number_items</code> is 1).</p>
+
+<p>There are two main ways to alleviate overplotting issues:</p>
+<ol>
+  <li>changing the transparency of the points</li>
+  <li>jittering the location of the points</li>
+</ol>
+
+<p>Let’s first explore option 1, changing the transparency of the points. What we 
+mean when we say “transparency” we mean the opacity of point, or your ability to 
+see through the point. We can control the transparency of the points with the 
+<code class="language-plaintext highlighter-rouge">alpha</code> argument to <code class="language-plaintext highlighter-rouge">geom_point</code>. Values of <code class="language-plaintext highlighter-rouge">alpha</code> range from 0 to 1, with
+lower values corresponding to more transparent colors (an <code class="language-plaintext highlighter-rouge">alpha</code> of 1 is the 
+default value).</p>
+
+<p>Here, we change the <code class="language-plaintext highlighter-rouge">alpha</code> to 0.5, in an attempt to help fix the overplotting. 
+While the overplotting isn’t solved, adding transparency begins to address this
+problem, as the points where there are overlapping observations are darker (as 
+opposed to lighter gray):</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_point</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-adding-transparency-1.png" title="plot of chunk adding-transparency" alt="plot of chunk adding-transparency" width="612" style="display: block; margin: auto;" /></p>
+
+<p>That only helped a little bit with the overplotting problem, so let’s try option
+two. We can jitter the points on the plot, so that we can see each point in the
+locations where there are overlapping points. Jittering introduces a little bit
+of randomness into the position of our points. You can think of this process as 
+taking the overplotted graph and giving it a tiny shake. The points will move a 
+little bit side-to-side and up-and-down, but their position from the original 
+plot won’t dramatically change.</p>
+
+<p>We can jitter our points using the <code class="language-plaintext highlighter-rouge">geom_jitter()</code> function instead of the
+<code class="language-plaintext highlighter-rouge">geom_point()</code>  function, as seen below:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_jitter</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-adding-jitter-1.png" title="plot of chunk adding-jitter" alt="plot of chunk adding-jitter" width="612" style="display: block; margin: auto;" />
+The <code class="language-plaintext highlighter-rouge">geom_jitter()</code> function allows for us to specify the amount of random
+motion in the jitter, using the <code class="language-plaintext highlighter-rouge">width</code> and <code class="language-plaintext highlighter-rouge">height</code> arguments. When we don’t 
+specify values for <code class="language-plaintext highlighter-rouge">width</code> and <code class="language-plaintext highlighter-rouge">height</code>, <code class="language-plaintext highlighter-rouge">geom_jitter()</code> defaults to 40% of the
+resolution of the data (the smallest change that can be measured). Hence, if we 
+would like <em>less</em> spread in our jitter than was default, we should pick values 
+between 0.1 and 0.4. Experiment with the values to see how your plot changes.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_jitter</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+                </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-adding-width-height-1.png" title="plot of chunk adding-width-height" alt="plot of chunk adding-width-height" width="612" style="display: block; margin: auto;" /></p>
+
+<p>For our final change, we can also add colours for all the points by specifying 
+a <code class="language-plaintext highlighter-rouge">color</code> argument inside the <code class="language-plaintext highlighter-rouge">geom_jitter()</code> function:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_jitter</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+                </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+                </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-adding-colors-1.png" title="plot of chunk adding-colors" alt="plot of chunk adding-colors" width="612" style="display: block; margin: auto;" /></p>
+
+<p>To colour each species in the plot differently, you could use a vector as an input 
+to the argument <strong><code class="language-plaintext highlighter-rouge">color</code></strong>.  However, because we are now mapping features of the
+data to a colour, instead of setting one colour for all points, the colour of the 
+points now needs to be set inside a call to the <strong><code class="language-plaintext highlighter-rouge">aes</code></strong> function. When we map 
+a variable in our data to the colour of the points, <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> will provide a
+different colour corresponding to the different values of the variable. We will 
+continue to specify the value of <strong><code class="language-plaintext highlighter-rouge">alpha</code></strong>, <strong><code class="language-plaintext highlighter-rouge">width</code></strong>, and <strong><code class="language-plaintext highlighter-rouge">height</code></strong>
+outside of the <strong><code class="language-plaintext highlighter-rouge">aes</code></strong> function because we are using the same value for 
+every point. Here is an example where we color points by the <strong><code class="language-plaintext highlighter-rouge">village</code></strong> 
+of the observation:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_jitter</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-color-by-species-1.png" title="plot of chunk color-by-species" alt="plot of chunk color-by-species" width="612" style="display: block; margin: auto;" /></p>
+
+<p>There appears to be a positive trend between number of household
+members and number of items owned (from the list provided). Additionally, 
+this trend does not appear to be different by village.</p>
+
+<blockquote>
+  <h2 id="notes-1">Notes</h2>
+
+  <p>As you will learn, there are multiple ways to plot the a relationship
+between variables. Another way to plot data with overlapping points is 
+to use the <code class="language-plaintext highlighter-rouge">geom_count</code> plotting function. The <code class="language-plaintext highlighter-rouge">geom_count()</code>  function 
+makes the size of each point representative of the number of data items 
+of that type and the legend gives point sizes associated to particular 
+numbers of items.</p>
+
+  <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+   </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_membrs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_items</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+   </span><span class="n">geom_count</span><span class="p">()</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><img src="../fig/rmd-04-color-by-species-notes-1.png" title="plot of chunk color-by-species-notes" alt="plot of chunk color-by-species-notes" width="612" style="display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote class="callout challenge">
+  <h2 id="exercise">Exercise</h2>
+
+  <p>Use what you just learned to create a scatter plot of <code class="language-plaintext highlighter-rouge">rooms</code> by <code class="language-plaintext highlighter-rouge">village</code>
+with the <code class="language-plaintext highlighter-rouge">respondent_wall_type</code> showing in different colours. Does this 
+seem like a good way to display the relationship between these variables? 
+What other kinds of plots might you use to show this type of data?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rooms</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_jitter</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">),</span><span class="w">
+		    </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+		    </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w">
+		    </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p><img src="../fig/rmd-04-scatter-challenge-1.png" title="plot of chunk scatter-challenge" alt="plot of chunk scatter-challenge" width="612" style="display: block; margin: auto;" /></p>
+
+    <p>This is not a great way to show this type of data because it is difficult to
+distinguish between villages. What other plot types could help you visualize
+this relationship better?</p>
+  </blockquote>
+</blockquote>
+
+<h2 id="boxplot">Boxplot</h2>
+
+<p>We can use boxplots to visualize the distribution of rooms for each
+wall type:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rooms</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_boxplot</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-boxplot-1.png" title="plot of chunk boxplot" alt="plot of chunk boxplot" width="612" style="display: block; margin: auto;" /></p>
+
+<p>By adding points to a boxplot, we can have a better idea of the number of
+measurements and of their distribution:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rooms</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_boxplot</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_jitter</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+    		</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tomato"</span><span class="p">,</span><span class="w">
+    		</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w">
+    		</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: &lt;text&gt;:8:0: unexpected end of input
+6:                 width = 0.2,
+7:                 height = 0.2) +
+  ^
+</code></pre></div></div>
+
+<p>We can see that muddaub houses and sunbrick houses tend to be smaller than
+burntbrick houses.</p>
+
+<p>Notice how the  boxplot layer is behind the jitter layer? What do you need to
+change in the code to put the boxplot in behind the points such that it’s not 
+hidden?</p>
+
+<blockquote class="challenge">
+  <h2 id="exercise-1">Exercise</h2>
+
+  <p>Boxplots are useful summaries, but hide the <em>shape</em> of the distribution. For
+example, if the distribution is bimodal, we would not see it in a
+boxplot. An alternative to the boxplot is the violin plot, where the shape
+(of the density of points) is drawn.</p>
+
+  <ul>
+    <li>Replace the box plot with a violin plot; see <code class="language-plaintext highlighter-rouge">geom_violin()</code>.</li>
+  </ul>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rooms</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_violin</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_jitter</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tomato"</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p><img src="../fig/rmd-04-violin-plot-1.png" title="plot of chunk violin-plot" alt="plot of chunk violin-plot" width="612" style="display: block; margin: auto;" /></p>
+  </blockquote>
+
+  <p>So far, we’ve looked at the distribution of room number within wall type. Try
+making a new plot to explore the distribution of another variable within wall
+type.</p>
+
+  <ul>
+    <li>Create a boxplot for <code class="language-plaintext highlighter-rouge">liv_count</code> for each wall type. Overlay the boxplot
+layer on a jitter layer to show actual measurements.</li>
+  </ul>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+   </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">liv_count</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+   </span><span class="n">geom_boxplot</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+   </span><span class="n">geom_jitter</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p><img src="../fig/rmd-04-boxplot-exercise-1.png" title="plot of chunk boxplot-exercise" alt="plot of chunk boxplot-exercise" width="612" style="display: block; margin: auto;" /></p>
+  </blockquote>
+
+  <ul>
+    <li>Add colour to the data points on your boxplot according to whether the
+respondent is a member of an irrigation association (<code class="language-plaintext highlighter-rouge">memb_assoc</code>).</li>
+  </ul>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">liv_count</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_boxplot</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_jitter</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">memb_assoc</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p><img src="../fig/rmd-04-boxplot-exercise-factor-1.png" title="plot of chunk boxplot-exercise-factor" alt="plot of chunk boxplot-exercise-factor" width="612" style="display: block; margin: auto;" /></p>
+  </blockquote>
+</blockquote>
+
+<h2 id="barplots">Barplots</h2>
+
+<p>Barplots are also useful for visualizing categorical data. By default,
+<code class="language-plaintext highlighter-rouge">geom_bar</code> accepts a variable for x, and plots the number of instances each
+value of x (in this case, wall type) appears in the dataset.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-barplot-1-1.png" title="plot of chunk barplot-1" alt="plot of chunk barplot-1" width="612" style="display: block; margin: auto;" /></p>
+
+<p>We can use the <code class="language-plaintext highlighter-rouge">fill</code> aesthetic for the <code class="language-plaintext highlighter-rouge">geom_bar()</code> geom to colour bars by
+the portion of each count that is from each village.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-barplot-stack-1.png" title="plot of chunk barplot-stack" alt="plot of chunk barplot-stack" width="612" style="display: block; margin: auto;" /></p>
+
+<p>This creates a stacked bar chart. These are generally more difficult to read
+than side-by-side bars. We can separate the portions of the stacked bar that
+correspond to each village and put them side-by-side by using the <code class="language-plaintext highlighter-rouge">position</code>
+argument for <code class="language-plaintext highlighter-rouge">geom_bar()</code> and setting it to “dodge”.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">),</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-barplot-dodge-1.png" title="plot of chunk barplot-dodge" alt="plot of chunk barplot-dodge" width="612" style="display: block; margin: auto;" /></p>
+
+<p>This is a nicer graphic, but we’re more likely to be interested in the
+proportion of each housing type in each village than in the actual count of
+number of houses of each type (because we might have sampled different numbers
+of households in each village). To compare proportions, we will first create a
+new data frame (<code class="language-plaintext highlighter-rouge">percent_wall_type</code>) with a new column named “percent”
+representing the percent of each house type in each village. We will remove
+houses with cement walls, as there was only one in the dataset.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_wall_type</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">filter</span><span class="p">(</span><span class="n">respondent_wall_type</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"cement"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">count</span><span class="p">(</span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">group_by</span><span class="p">(</span><span class="n">village</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">mutate</span><span class="p">(</span><span class="n">percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ungroup</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now we can use this new data frame to create our plot showing the
+percentage of each house type in each village.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_wall_type</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-barplot-wall-type-1.png" title="plot of chunk barplot-wall-type" alt="plot of chunk barplot-wall-type" width="612" style="display: block; margin: auto;" /></p>
+
+<blockquote class="challenge">
+  <h2 id="exercise-2">Exercise</h2>
+
+  <p>Create a bar plot showing the proportion of respondents in each
+village who are or are not part of an irrigation association
+(<code class="language-plaintext highlighter-rouge">memb_assoc</code>). Include only respondents who answered that question
+in the calculations and plot. Which village had the lowest proportion of
+respondents in an irrigation association?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_memb_assoc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">memb_assoc</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">count</span><span class="p">(</span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">memb_assoc</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">village</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">ungroup</span><span class="p">()</span><span class="w">
+
+</span><span class="n">percent_memb_assoc</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+   </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">memb_assoc</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p><img src="../fig/rmd-04-barplot-memb-assoc-1.png" title="plot of chunk barplot-memb-assoc" alt="plot of chunk barplot-memb-assoc" width="612" style="display: block; margin: auto;" /></p>
+
+    <p>Ruaca had the lowest proportion of members in an irrigation association.</p>
+  </blockquote>
+</blockquote>
+
+<h2 id="adding-labels-and-titles">Adding Labels and Titles</h2>
+
+<p>By default, the axes labels on a plot are determined by the name of the variable
+being plotted. However, <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> offers lots of customization options,
+like specifying the axes labels, and adding a title to the plot with
+relatively few lines of code. We will add more informative x and y axis
+labels to our plot of proportion of house type by village and also add
+a title.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_wall_type</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Proportion of wall type by village"</span><span class="p">,</span><span class="w">
+         </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Village"</span><span class="p">,</span><span class="w">
+         </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-barplot-wall-types-labeled-1.png" title="plot of chunk barplot-wall-types-labeled" alt="plot of chunk barplot-wall-types-labeled" width="612" style="display: block; margin: auto;" /></p>
+
+<h2 id="faceting">Faceting</h2>
+
+<p>Rather than creating a single plot with side-by-side bars for each
+village, we may want to create multiple plot, where each plot shows the
+data for a single village. This would be especially useful if we had
+a large number of villages that we had sampled, as a large number of
+side-by-side bars will become more difficult to read.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> has a special technique called <em>faceting</em> that allows the 
+user to split one plot into multiple plots based on a factor included 
+in the dataset. We will use it to split our barplot of housing type 
+proportion by village so that each village has it’s own panel in a 
+multi-panel plot:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_wall_type</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Proportion of wall type by village"</span><span class="p">,</span><span class="w">
+         </span><span class="n">x</span><span class="o">=</span><span class="s2">"Wall Type"</span><span class="p">,</span><span class="w">
+         </span><span class="n">y</span><span class="o">=</span><span class="s2">"Percent"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">village</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-barplot-faceting-1.png" title="plot of chunk barplot-faceting" alt="plot of chunk barplot-faceting" width="612" style="display: block; margin: auto;" /></p>
+
+<p>Click the “Zoom” button in your RStudio plots pane to view a larger
+version of this plot.</p>
+
+<p>Usually plots with white background look more readable when printed.  We can set
+the background to white using the function <code class="language-plaintext highlighter-rouge">theme_bw()</code>. Additionally, you can remove
+the grid:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_wall_type</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Proportion of wall type by village"</span><span class="p">,</span><span class="w">
+         </span><span class="n">x</span><span class="o">=</span><span class="s2">"Wall Type"</span><span class="p">,</span><span class="w">
+         </span><span class="n">y</span><span class="o">=</span><span class="s2">"Percent"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">village</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme</span><span class="p">(</span><span class="n">panel.grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_blank</span><span class="p">())</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-barplot-theme-bw-1.png" title="plot of chunk barplot-theme-bw" alt="plot of chunk barplot-theme-bw" width="612" style="display: block; margin: auto;" /></p>
+
+<p>What if we wanted to see the proportion of respondents in each village
+who owned a particular item? We can calculate the percent of people
+in each village who own each item and then create a faceted series of
+bar plots where each plot is a particular item. First we need to
+calculate the percentage of people in each village who own each item:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_items</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">interviews_plotting</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">pivot_longer</span><span class="p">(</span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bicycle</span><span class="o">:</span><span class="n">no_listed_items</span><span class="p">,</span><span class="w"> </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"items"</span><span class="p">,</span><span class="w"> 
+                 </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"items_owned_logical"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">filter</span><span class="p">(</span><span class="n">items_owned_logical</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">count</span><span class="p">(</span><span class="n">items</span><span class="p">,</span><span class="w"> </span><span class="n">village</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="c1">## add a column with the number of people in each village</span><span class="w">
+    </span><span class="n">mutate</span><span class="p">(</span><span class="n">people_in_village</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">case_when</span><span class="p">(</span><span class="n">village</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Chirodzo"</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="m">39</span><span class="p">,</span><span class="w">
+                                         </span><span class="n">village</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"God"</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="m">43</span><span class="p">,</span><span class="w">
+                                         </span><span class="n">village</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Ruaca"</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="m">49</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">mutate</span><span class="p">(</span><span class="n">percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">people_in_village</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To calculate this percentage data frame, we needed to use the <code class="language-plaintext highlighter-rouge">case_when()</code>
+parameter within <code class="language-plaintext highlighter-rouge">mutate()</code>. In our earlier examples, we knew that each house
+was one and only one of the types specified. However, people can (and do) own
+more than one item, so we can’t use the sum of the count column to give us the
+denominator in our percentage calculation. Instead, we need to specify the
+number of respondents in each village. Using this data frame, we can now create
+a multi-paneled bar plot.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_items</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme</span><span class="p">(</span><span class="n">panel.grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_blank</span><span class="p">())</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-percent-items-barplot-1.png" title="plot of chunk percent-items-barplot" alt="plot of chunk percent-items-barplot" width="612" style="display: block; margin: auto;" /></p>
+
+<h2 id="ggplot2-themes"><strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> themes</h2>
+
+<p>In addition to <code class="language-plaintext highlighter-rouge">theme_bw()</code>, which changes the plot background to white,
+<strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> comes with several other themes which can be useful to quickly
+change the look of your visualization. The complete list of themes is available
+at <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">https://ggplot2.tidyverse.org/reference/ggtheme.html</a>. <code class="language-plaintext highlighter-rouge">theme_minimal()</code> and
+<code class="language-plaintext highlighter-rouge">theme_light()</code> are popular, and <code class="language-plaintext highlighter-rouge">theme_void()</code> can be useful as a starting
+point to create a new hand-crafted theme.</p>
+
+<p>The
+<a href="https://jrnold.github.io/ggthemes/reference/index.html">ggthemes</a>
+package provides a wide variety of options (including an Excel 2003 theme). The
+<a href="https://exts.ggplot2.tidyverse.org/"><strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> extensions website</a> provides a list
+of packages that extend the capabilities of <strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong>, including additional
+themes.</p>
+
+<blockquote class="challenge">
+  <h2 id="exercise-3">Exercise</h2>
+
+  <p>Experiment with at least two different themes. Build the previous plot
+using each of those themes. Which do you like best?</p>
+</blockquote>
+
+<h2 id="customization">Customization</h2>
+
+<p>Take a look at the <a href="https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf"><strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> cheat
+sheet</a>,
+and think of ways you could improve the plot.</p>
+
+<p>Now, let’s change names of axes to something more informative than ‘village’ and
+‘percent’ and add a title to the figure:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_items</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of respondents in each village who owned each item"</span><span class="p">,</span><span class="w">
+         </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Village"</span><span class="p">,</span><span class="w">
+         </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of Respondents"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme_bw</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-ggplot-customization-1.png" title="plot of chunk ggplot-customization" alt="plot of chunk ggplot-customization" width="612" style="display: block; margin: auto;" /></p>
+
+<p>The axes have more informative names, but their readability can be improved by
+increasing the font size:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_items</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of respondents in each village who owned each item"</span><span class="p">,</span><span class="w">
+         </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Village"</span><span class="p">,</span><span class="w">
+         </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of Respondents"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-ggplot-customization-font-size-1.png" title="plot of chunk ggplot-customization-font-size" alt="plot of chunk ggplot-customization-font-size" width="612" style="display: block; margin: auto;" /></p>
+
+<p>Note that it is also possible to change the fonts of your plots. If you are on
+Windows, you may have to install the <a href="https://github.com/wch/extrafont"><strong><code class="language-plaintext highlighter-rouge">extrafont</code></strong>
+package</a>, and follow the instructions included
+in the README for this package.</p>
+
+<p>After our manipulations, you may notice that the values on the x-axis are still
+not properly readable. Let’s change the orientation of the labels and adjust
+them vertically and horizontally so they don’t overlap. You can use a 90-degree
+angle, or experiment to find the appropriate angle for diagonally oriented
+labels. With a larger font, the title also runs off. We can add “\n” in the string
+for the title to insert a new line:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percent_items</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of respondents in each village \n who owned each item"</span><span class="p">,</span><span class="w">
+         </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Village"</span><span class="p">,</span><span class="w">
+         </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of Respondents"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"grey20"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w">
+                                     </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span><span class="w">
+          </span><span class="n">axis.text.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"grey20"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">),</span><span class="w">
+          </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-ggplot-customization-label-orientation-1.png" title="plot of chunk ggplot-customization-label-orientation" alt="plot of chunk ggplot-customization-label-orientation" width="612" style="display: block; margin: auto;" /></p>
+
+<p>If you like the changes you created better than the default theme, you can save
+them as an object to be able to easily apply them to other plots you may create.
+We can also add <code class="language-plaintext highlighter-rouge">plot.title = element_text(hjust = 0.5)</code> to centre the title:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grey_theme</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"grey20"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w">
+                                               </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+                                               </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span><span class="w">
+                    </span><span class="n">axis.text.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"grey20"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">),</span><span class="w">
+                    </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">),</span><span class="w">
+                    </span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">))</span><span class="w">
+
+
+</span><span class="n">percent_items</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of respondents in each village \n who owned each item"</span><span class="p">,</span><span class="w">
+         </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Village"</span><span class="p">,</span><span class="w">
+         </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of Respondents"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">grey_theme</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-04-ggplot-custom-themes-1.png" title="plot of chunk ggplot-custom-themes" alt="plot of chunk ggplot-custom-themes" width="612" style="display: block; margin: auto;" /></p>
+
+<blockquote class="challenge">
+  <h2 id="exercise-4">Exercise</h2>
+
+  <p>With all of this information in hand, please take another five minutes to
+either improve one of the plots generated in this exercise or create a
+beautiful graph of your own. Use the RStudio <a href="https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf"><strong><code class="language-plaintext highlighter-rouge">ggplot2</code></strong> cheat sheet</a>
+for inspiration. Here are some ideas:</p>
+
+  <ul>
+    <li>See if you can make the bars white with black outline.</li>
+    <li>Try using a different colour palette (see
+<a href="http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/">http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/</a>).</li>
+  </ul>
+</blockquote>
+
+<p>After creating your plot, you can save it to a file in your favourite format. The Export tab in the <strong>Plot</strong> pane in RStudio will save your plots at low resolution, which will not be accepted by many journals and will not scale well for posters.</p>
+
+<p>Instead, use the <code class="language-plaintext highlighter-rouge">ggsave()</code> function, which allows you easily change the dimension and resolution of your plot by adjusting the appropriate arguments (<code class="language-plaintext highlighter-rouge">width</code>, <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">dpi</code>).</p>
+
+<p>Make sure you have the <code class="language-plaintext highlighter-rouge">fig_output/</code> folder in your working directory.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">percent_items</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">village</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dodge"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of respondents in each village \n who owned each item"</span><span class="p">,</span><span class="w">
+         </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Village"</span><span class="p">,</span><span class="w">
+         </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Percent of Respondents"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"grey20"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w">
+                                     </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span><span class="w">
+          </span><span class="n">axis.text.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"grey20"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">),</span><span class="w">
+          </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">),</span><span class="w">
+          </span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">))</span><span class="w">
+
+</span><span class="n">ggsave</span><span class="p">(</span><span class="s2">"fig_output/name_of_file.png"</span><span class="p">,</span><span class="w"> </span><span class="n">my_plot</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note: The parameters <code class="language-plaintext highlighter-rouge">width</code> and <code class="language-plaintext highlighter-rouge">height</code> also determine the font size in the saved plot.</p>
+
+
+
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p><code class="language-plaintext highlighter-rouge">ggplot2</code> is a flexible and useful tool for creating plots in R.</p>
+</li>
+    
+    <li><p>The data set and coordinate system can be defined using the <code class="language-plaintext highlighter-rouge">ggplot</code> function.</p>
+</li>
+    
+    <li><p>Additional layers, including geoms, are added using the <code class="language-plaintext highlighter-rouge">+</code> operator.</p>
+</li>
+    
+    <li><p>Boxplots are useful for visualizing the distribution of a continuous variable.</p>
+</li>
+    
+    <li><p>Barplots are useful for visualizing categorical data.</p>
+</li>
+    
+    <li><p>Faceting allows you to generate multiple plots based on a categorical variable.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../03-dplyr-tidyr/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../0x-json/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-6 license" id="license-info" align="left">
+	
+	Licensed under <a href="">CC-BY 4.0</a> 2018–2020
+	by <a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Licensed under <a href="">CC-BY 4.0</a> 2016–2018
+	by <a href="http://datacarpentry.org">Data Carpentry</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	
+	<a href="/edit//_episodes_rmd/04-ggplot2.Rmd" data-checker-ignore>Edit on GitHub</a>
+	
+	
+	/
+	<a href="/blob//CONTRIBUTING.md" data-checker-ignore>Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION" data-checker-ignore>Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

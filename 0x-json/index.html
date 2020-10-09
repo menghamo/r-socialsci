@@ -1,0 +1,835 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2020-10-09 11:36:08 +0000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+    <link rel="license" href="#license-info" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/dc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/dc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/dc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/dc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/dc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/dc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/dc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/dc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Data Carpentry - R for Social Scientists"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/dc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/dc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/dc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/dc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/dc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  <title>
+  Processing JSON data &ndash; R for Social Scientists
+  </title>
+
+  </head>
+  <body>
+
+    
+
+
+
+
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="http://datacarpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/dc-icon-black.svg" alt="Data Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            
+            <li><a href="../00-intro/index.html">Before we Start</a></li>
+            
+            
+            <li><a href="../01-intro-to-r/index.html">Introduction to R</a></li>
+            
+            
+            <li><a href="../02-starting-with-data/index.html">Starting with Data</a></li>
+            
+            
+            <li><a href="../03-dplyr-tidyr/index.html">Data Wrangling with dplyr and tidyr</a></li>
+            
+            
+            <li><a href="../04-ggplot2/index.html">Data Visualisation with ggplot2</a></li>
+            
+            
+            <li><a href="../0x-json/index.html">Processing JSON data</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/index.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+        
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            
+            <li><a href="../about/index.html">About</a></li>
+            
+            
+            <li><a href="../data-visualisation-handout/index.html">Code Handout - Data Visualisation with ggplot2</a></li>
+            
+            
+            <li><a href="../data-wrangling-handout/index.html">Code Handout</a></li>
+            
+            
+            <li><a href="../discuss/index.html">Discussion</a></li>
+            
+            
+            <li><a href="../figures/index.html">Figures</a></li>
+            
+            
+            <li><a href="../guide/index.html">Instructor Notes</a></li>
+            
+            
+            <li><a href="../intro-R-handout/index.html">Code Handout - Introduction to R</a></li>
+            
+            
+            <li><a href="../starting-with-data-handout/index.html">Code Handout - Starting with Data</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	
+	<li><a href="/edit//_episodes_rmd/0x-json.Rmd" data-checker-ignore>Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../04-ggplot2/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">R for Social Scientists</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Processing JSON data</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 30 min
+      <br/>
+      <strong>Exercises:</strong> 15 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>What is JSON format?</p>
+</li>
+	
+	<li><p>How can I convert JSON to an R dataframe?</p>
+</li>
+	
+	<li><p>How can I convert an array of JSON record into a table?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Describe the JSON data format</p>
+</li>
+	
+	<li><p>Understand where JSON is typically used</p>
+</li>
+	
+	<li><p>Appreciate some advantages of using JSON over tabular data</p>
+</li>
+	
+	<li><p>Appreciate some disadvantages of processing JSON documents</p>
+</li>
+	
+	<li><p>Use the jsonLite package to read a JSON file</p>
+</li>
+	
+	<li><p>Display formatted JSON as dataframe</p>
+</li>
+	
+	<li><p>Select and display nested dataframe fields from a JSON document</p>
+</li>
+	
+	<li><p>Write tabular data from selected elements from a JSON document to a csv file</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<h2 id="the-json-data-format">The JSON data format</h2>
+
+<p>The JSON data format was designed as a way of allowing different machines or processes within machines to communicate with each other by sending messages constructed in a well defined format. JSON is now the preferred data format used by APIs (Application Programming Interfaces).</p>
+
+<p>The JSON format although somewhat verbose is not only Human readable but it can also be mapped very easily to an R dataframe.</p>
+
+<p>We are going to read a file of data formatted as JSON, convert it into a dataframe in R then selectively create a csv file from the extracted data.</p>
+
+<p>The JSON file we are going to use is the <a href="../data/SAFI.json">SAFI.json</a> file. This is the output file from an electronic survey system called ODK. The JSON represents the answers to a series of survey questions. The questions themselves have been replaced with unique Keys, the values are the answers.</p>
+
+<p>Because detailed surveys are by nature nested structures making it possible to record different levels of detail or selectively ask a set of specific questions based on the answer given a previous question, the structure of the answers for the survey can not only be complex and convoluted, it could easily be different from one survey respondent’s set of answers to another.</p>
+
+<h3 id="advantages-of-json">Advantages of JSON</h3>
+
+<ul>
+  <li>Very popular data format for APIs (e.g. results from an Internet search)</li>
+  <li>Human readable</li>
+  <li>Each record (or document as they are called) is self contained. The equivalent of the column name and column values are in every record.</li>
+  <li>Documents do not all have to have the same structure within the same file</li>
+  <li>Document structures can be complex and nested</li>
+</ul>
+
+<h3 id="disadvantages-of-json">Disadvantages of JSON</h3>
+
+<ul>
+  <li>It is more verbose than the equivalent data in csv format</li>
+  <li>Can be more difficult to process and display than csv formatted data</li>
+</ul>
+
+<h2 id="use-the-json-package-to-read-a-json-file">Use the JSON package to read a JSON file</h2>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">jsonlite</span><span class="p">)</span><span class="w">
+
+</span><span class="n">json_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_json</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">'data/SAFI.json'</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We can see that a new object called json_data has appeared in our Environment. It is described as a Large list (131 elements). In this current form, our data is messy. You can have a glimpse of it with the <code class="language-plaintext highlighter-rouge">head()</code> or <code class="language-plaintext highlighter-rouge">View()</code> functions. It will look not much more structured than if you were to open the JSON file with a text editor.</p>
+
+<p>This is because, by default, the <code class="language-plaintext highlighter-rouge">read_json()</code> function’s parameter <code class="language-plaintext highlighter-rouge">simplifyVector</code>, which specifies whether or not to simplify vectors is set to FALSE. This means that the default setting does not simplify nested lists into vectors and data frames. However, we can set this to TRUE, and our data will be read directly as a dataframe:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">json_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_json</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">'data/SAFI.json'</span><span class="p">,</span><span class="w"> </span><span class="n">simplifyVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now we can see we have this json data in a dataframe format. Have a glimpse of it with the <code class="language-plaintext highlighter-rouge">head()</code> function:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  C06_rooms B19_grand_liv A08_ward E01_water_use B18_sp_parents_liv
+1         1            no    ward2            no                yes
+2         1           yes    ward2           yes                yes
+3         1            no    ward2            no                 no
+4         1            no    ward2            no                 no
+5         1           yes    ward2            no                 no
+6         1            no    ward2            no                 no
+  B16_years_liv E_yes_group_count                                   F_liv
+1             4              &lt;NA&gt;                              1, poultry
+2             9                 3              4, 3, 4, oxen, cows, goats
+3            15              &lt;NA&gt;                                    NULL
+4             6              &lt;NA&gt;                        3, 4, oxen, cows
+5            40              &lt;NA&gt; 1, 4, 2, 13, oxen, cows, goats, poultry
+6             3              &lt;NA&gt;                                    NULL
+  _note2                                instanceID B20_sp_grand_liv
+1     NA uuid:ec241f2c-0609-46ed-b5e8-fe575f6cefef              yes
+2     NA uuid:099de9c9-3e5e-427b-8452-26250e840d6e              yes
+3     NA uuid:193d7daf-9582-409b-bf09-027dd36f9007               no
+4     NA uuid:148d1105-778a-4755-aa71-281eadd4a973               no
+5     NA uuid:2c867811-9696-4966-9866-f35c3e97d02d               no
+6     NA uuid:daa56c91-c8e3-44c3-a663-af6a49a2ca70               no
+  F10_liv_owned_other _note1 F12_poultry D_plots_count
+1                  NA     NA         yes             2
+2                  NA     NA         yes             3
+3                  NA     NA         yes             1
+4                  NA     NA         yes             3
+5                  NA     NA         yes             2
+6                  NA     NA          no             1
+  C02_respondent_wall_type_other C02_respondent_wall_type
+1                             NA                  muddaub
+2                             NA                  muddaub
+3                             NA              burntbricks
+4                             NA              burntbricks
+5                             NA              burntbricks
+6                             NA                  muddaub
+  C05_buildings_in_compound _remitters E18_months_no_water
+1                         1       NULL                NULL
+2                         1       NULL           Aug, Sept
+3                         1       NULL                NULL
+4                         1       NULL                NULL
+5                         1       NULL                NULL
+6                         1       NULL                NULL
+                                      F07_use_income G01_no_meals
+1                                               &lt;NA&gt;            2
+2 AlimentaÃ§Ã£o e pagamento de educaÃ§Ã£o dos filhos            2
+3                                               &lt;NA&gt;            2
+4                                               &lt;NA&gt;            2
+5                                               &lt;NA&gt;            2
+6                                               &lt;NA&gt;            2
+  E17_no_enough_water F04_need_money                  A05_end C04_window_type
+1                &lt;NA&gt;           &lt;NA&gt; 2017-04-02T17:29:08.000Z              no
+2                 yes             no 2017-04-02T17:26:19.000Z              no
+3                &lt;NA&gt;           &lt;NA&gt; 2017-04-02T17:26:53.000Z             yes
+4                &lt;NA&gt;           &lt;NA&gt; 2017-04-02T17:27:16.000Z              no
+5                &lt;NA&gt;           &lt;NA&gt; 2017-04-02T17:27:35.000Z              no
+6                &lt;NA&gt;           &lt;NA&gt; 2017-04-02T17:28:02.000Z              no
+  E21_other_meth D_no_plots F05_money_source A07_district
+1           &lt;NA&gt;          2             NULL    district1
+2             no          3             NULL    district1
+3           &lt;NA&gt;          1             NULL    district1
+4           &lt;NA&gt;          3             NULL    district1
+5           &lt;NA&gt;          2             NULL    district1
+6           &lt;NA&gt;          1             NULL    district1
+  C03_respondent_floor_type
+1                     earth
+2                     earth
+3                    cement
+4                     earth
+5                     earth
+6                     earth
+                                                                                                                                                                                                                                           E_yes_group
+1                                                                                                                                                                                                                                                 NULL
+2 NA, furrows, furrows, tomatoes, vegetable, du_head, du_head, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, middle, middle, NA, 1000, 1000, NA, month, month, no, yes, yes, NA, rented, rented, NA, canal_gravity, canal_gravity, NA, canal, canal, 1, 2, 3
+3                                                                                                                                                                                                                                                 NULL
+4                                                                                                                                                                                                                                                 NULL
+5                                                                                                                                                                                                                                                 NULL
+6                                                                                                                                                                                                                                                 NULL
+  A01_interview_date B11_remittance_money                A04_start
+1         2016-11-17                   no 2017-03-23T09:49:57.000Z
+2         2016-11-17                   no 2017-04-02T09:48:16.000Z
+3         2016-11-17                   no 2017-04-02T14:35:26.000Z
+4         2016-11-17                   no 2017-04-02T14:55:18.000Z
+5         2016-11-17                   no 2017-04-02T15:10:35.000Z
+6         2016-11-17                   no 2017-04-02T15:27:25.000Z
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           D_plots
+1                                                                                                                                                                                                                                                              maize, maize, 1, 2, 0.5, 0.5, hactare, hactare, 1, 1, NA, NA, NA, head_spouse_free, May, 0.5, bags, NA, NA, NA, hand_hoe, NA, NA, no, NA, NA, NA, NA, no, no, NA, NA, 4, no, NA, NA, NA, owned, none, NA, maize, 1, 1, du_head, head_spouse_free, May, 0.5, bags, NA, 360, NA, hand_hoe, 1, NA, no, NA, NA, NA, NA, yes, no, NA, NA, 3, no, main_road, NA, NA, owned, none, NA, maize, 1, 1, NA, NA
+2 maize, tomatoes, vegetable, 3, 2, 3, 1, 1.5, 1, hactare, hactare, hactare, 1, 1, 1, NA, NA, NA, NA, head_spouse_free, June, 1, bags, NA, NA, NA, ox, NA, NA, no, NA, NA, NA, NA, no, no, NA, NA, 80, no, NA, NA, NA, owned, none, NA, maize, 1, 1, du_head, head_spouse_free, Aug, 1.5, crates, NA, 400, NA, hand_hoe, 180, NA, no, NA, NA, NA, NA, yes, yes, 1800, NA, 180, no, On_contract, NA, NA, owned, paid_fertilizer, 1, tomatoes, 1, 1, spouse, head_spouse_free, Aug, 1, bags, NA, 800, own_choice, hand_hoe, 12, NA, yes, NA, NA, NA, 1200, yes, yes, 120, NA, 12, no, urban_market, NA, NA, owned, paid_fertilizer, 1.8, vegetable, 1, 1, NA, NA, NA
+3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         maize, 1, 1, hactare, 1, NA, NA, du, Apr, 1, bags, NA, NA, NA, hand_hoe, NA, NA, no, NA, NA, NA, NA, no, no, NA, NA, 3, no, NA, NA, NA, owned, none, NA, maize, 1, 1, NA
+4                                                                                                                                                 maize, maize, sorghum, 1, 2, 3, 1, 1, 1, hactare, hactare, hactare, 1, 1, 1, NA, NA, NA, NA, du, June, 1, bags, NA, NA, NA, ox, NA, NA, no, NA, NA, NA, NA, no, no, NA, NA, 4, no, NA, NA, NA, owned, none, NA, maize, 1, 1, NA, du, June, 1, bags, NA, NA, NA, ox, NA, NA, no, NA, NA, NA, NA, no, no, NA, NA, 2, no, NA, NA, NA, owned, none, NA, maize, 1, 1, NA, du, Aug, 1, bags, NA, NA, NA, ox, NA, NA, no, NA, NA, NA, NA, no, no, NA, NA, 5, no, NA, NA, NA, owned, none, NA, sorghum, 1, 1, NA, NA, NA
+5                                                                                                                                                                                                                                                                                                     maize, maize, 1, 2, 1.5, 0.5, hactare, hactare, 1, 1, NA, NA, NA, du, June, 0.5, bags, NA, NA, NA, hand_hoe, NA, NA, no, NA, NA, NA, NA, no, no, NA, NA, 4, no, NA, NA, NA, owned, none, NA, maize, 1, 1, NA, du, June, 0.5, bags, NA, NA, NA, hand_hoe, NA, NA, no, NA, NA, NA, NA, no, no, NA, NA, 3, no, NA, NA, NA, owned, none, NA, maize, 1, 1, NA, NA
+6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          maize, 1, 1.5, hactare, 1, NA, NA, du, June, 1.5, bags, NA, NA, NA, ox, NA, NA, no, NA, NA, NA, NA, no, no, NA, NA, 5, no, NA, NA, NA, owned, none, NA, maize, 1, 1, NA
+                                                                                                                                                                                                      F_items
+1 Iniciou um negÃ³cio, Comorou radio, Comprou uma Biscleta, 2011, 2012, 2012, Renda proveniente da produÃ§Ã£o agrÃ­cola, Renda proveniente da produÃ§Ã£o agrÃ­cola, Renda proveniente da produÃ§Ã£o agrÃ­cola
+2                                                                       Compra da Machamba, Comprou TalhÃ£o, 2016, 2016, Renda proveniente da produÃ§Ã£o agrÃ­cola, Renda proveniente da produÃ§Ã£o agrÃ­cola
+3                                                                                                          EducaÃ§Ã£o dos filhos, ConstruÃ§Ã£o de habitaÃ§Ã£o, 2016, 2007, Trabalho sazonal, Trabalho sazonal
+4                                                                                                                                      Radio, O sistema solar, 2016, 2016, Trabalho sazonal, Trabalho sazonal
+5                                                                                                                                                                                                        NULL
+6                                                                                                                                                                                                        NULL
+  F_liv_count              F10_liv_owned B_no_membrs F13_du_look_aftr_cows
+1           1                    poultry           3                    no
+2           3          oxen, cows, goats           7                    no
+3           1                       none          10                    no
+4           2                 oxen, cows           7                    no
+5           4 oxen, cows, goats, poultry           7                    no
+6           1                       none           3                    no
+  E26_affect_conflicts
+1                 &lt;NA&gt;
+2                 once
+3                 &lt;NA&gt;
+4                 &lt;NA&gt;
+5                 &lt;NA&gt;
+6                 &lt;NA&gt;
+                                                                      F14_items_owned
+1                                             bicycle, television, solar_panel, table
+2 cow_cart, bicycle, radio, cow_plough, solar_panel, solar_torch, table, mobile_phone
+3                                                                         solar_torch
+4                               bicycle, radio, cow_plough, solar_panel, mobile_phone
+5                                          motorcyle, radio, cow_plough, mobile_phone
+6                                                                                NULL
+  F06_crops_contr B17_parents_liv         G02_months_lack_food A11_years_farm
+1            &lt;NA&gt;              no                          Jan             11
+2       more_half             yes     Jan, Sept, Oct, Nov, Dec              2
+3            &lt;NA&gt;              no Jan, Feb, Mar, Oct, Nov, Dec             40
+4            &lt;NA&gt;              no          Sept, Oct, Nov, Dec              6
+5            &lt;NA&gt;             yes          Aug, Sept, Oct, Nov             18
+6            &lt;NA&gt;              no               Aug, Sept, Oct              3
+  F09_du_labour E_no_group_count E22_res_change E24_resp_assoc A03_quest_no
+1            no                2           NULL           &lt;NA&gt;           01
+2            no             &lt;NA&gt;           NULL             no           01
+3           yes                1           NULL           &lt;NA&gt;           03
+4           yes                3           NULL           &lt;NA&gt;           04
+5            no                2           NULL           &lt;NA&gt;           05
+6           yes                1           NULL           &lt;NA&gt;            6
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             _members
+1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  sec_3, pri_7, na, 27, 19, 1, male, female, male, unmarried, unmarried, single, head, Spouse, Child, Always, Always, Always, small_scale_farm, small_scale_farm, na, NA, NA, NA, 1, 2, 3, small_scale_farm, housework, small_scale_farm, na, NA, NA, NA, NA, NA, NA
+2                                                                                                                                                                                                                                                                                                                      sec_1, none, pri_1, pri_5, na, none, na, 22, 47, 7, 11, 6, 4, 2, female, male, male, male, male, female, female, unmarried, unmarried, single, single, na, na, na, Spouse, head, Child, Child, Child, Child, Child, Always, Always, Always, Always, Always, Always, Always, small_scale_farm, small_scale_farm, na, na, na, na, na, NA, NA, NA, NA, NA, NA, NA, 1, 2, 3, 4, 5, 6, 7, housework, small_scale_farm, small_scale_farm, na, na, na, na, na, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
+3 none, pri_5, pri_1, na, na, pri_7, pri_4, sec_1, na, na, 70, 30, 17, 1, 20, 18, 9, 14, 4, 5, female, female, male, male, male, male, female, female, female, female, widow/er, single, single, single, single, single, unmarried, single, single, single, head, Grandchild, Grandchild, Grandchild, Child, Child, Child, Grandchild, Grandchild, Grandchild, Always, Always, Always, Always, Always, Always, Always, Always, Always, Always, small_scale_farm, small_scale_farm, na, na, small_scale_farm, small_scale_farm, na, na, na, na, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, housework, small_scale_farm, housework, small_scale_farm, na, na, housework, small_scale_farm, small_scale_farm, na, na, na, na, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
+4                                                                                                                                                                                                                                                                         none, pri_1, pri_3, pri_2, na, na, na, 50, 28, 20, 8, 3, 2, 1, female, male, female, female, female, male, female, widow/er, unmarried, unmarried, single, single, single, single, parent, head, Spouse, Child, Child, Child, Child, Always, Always, Always, Always, Always, Always, Always, small_scale_farm, small_scale_farm, small_scale_farm, na, na, na, na, NA, NA, NA, NA, NA, NA, NA, 1, 2, 3, 4, 5, 6, 7, small_scale_farm, small_scale_farm, housework, small_scale_farm, na, na, na, na, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
+5                                                                                                                                                                                                                                                            none, sec_3, pri_6, pri_4, pri_3, na, na, 57, 28, 24, 10, 9, 5, 2, female, male, female, female, female, male, male, widow/er, married, unmarried, single, single, single, single, head, Child, other, Grandchild, Grandchild, Grandchild, Grandchild, Always, Always, Always, Always, Always, Always, Always, small_scale_farm, small_business, housework, na, na, na, na, NA, NA, NA, NA, NA, NA, NA, 1, 2, 3, 4, 5, 6, 7, housework, small_scale_farm, housework, small_business, housework, na, na, na, na, NA, NA, Nora, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
+6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    pri_1, none, pri_3, 33, 6, 9, female, male, male, single, single, single, head, Child, Child, Always, Always, Always, small_scale_farm, na, na, NA, NA, NA, 1, 2, 3, housework, small_scale_farm, na, na, NA, NA, NA, NA, NA, NA
+  A06_province gps:Accuracy E20_exper_other A09_village
+1    province1           14            &lt;NA&gt;    village2
+2    province1           19             yes    village2
+3    province1           13            &lt;NA&gt;    village2
+4    province1            5            &lt;NA&gt;    village2
+5    province1           10            &lt;NA&gt;    village2
+6    province1           12            &lt;NA&gt;    village2
+  C01_respondent_roof_type gps:Altitude gps:Longitude E23_memb_assoc
+1                    grass          698      33.48346           &lt;NA&gt;
+2                    grass          690      33.48342            yes
+3            mabatisloping          674      33.48345           &lt;NA&gt;
+4            mabatisloping          679      33.48342           &lt;NA&gt;
+5                    grass          689      33.48343           &lt;NA&gt;
+6                    grass          692      33.48339           &lt;NA&gt;
+  E19_period_use E25_fees_water C07_other_buildings
+1             NA           &lt;NA&gt;                  no
+2              2             no                  no
+3             NA           &lt;NA&gt;                  no
+4             NA           &lt;NA&gt;                  no
+5             NA           &lt;NA&gt;                  no
+6             NA           &lt;NA&gt;                  no
+                                                                                                                                             observation
+1                                                                                                                                                   None
+2                             Estes primeiros inquÃ©ritos nao tinhamos GPS introduzias is dados o tablet depois de preenchimento e tirava as cordenadas.
+3                                                                Ponto GeogrÃ¡fico \nLatitude: 18Â°54'4527324S\nLongetude: 33Â°6'373207E\nAltitude: 704m
+4         Esta o 2nd lanÃ§amento de questionario. As cordenadas geogrÃ¡ficas foram lanÃ§ados no prÃ³prio dia no tablet e nÃ£o foram registados no papel.
+5                            Esta Ã©  a 2a vez que o mesmo questionÃ¡rio esta sendo carregado no ODK, por isso que nÃ£o traz as cordenadas geogrÃ¡ficas.
+6 NÃ£o existe cordenadas geogrÃ¡ficas visto que lanÃ§ou se no tablet depois de ter terminado a entrevista, e os inquiridores nao traziam ainda os GPS's.
+  _note A12_agr_assoc
+1    NA            no
+2    NA           yes
+3    NA            no
+4    NA            no
+5    NA            no
+6    NA            no
+                                           G03_no_food_mitigation
+1              na, rely_less_food, reduce_meals, day_night_hungry
+2 na, reduce_meals, restrict_adults, borrow_food, seek_government
+3                                na, restrict_adults, lab_ex_food
+4                  na, reduce_meals, restrict_adults, lab_ex_food
+5                                          na, go_forest, migrate
+6                       borrow_food, lab_ex_food, seek_government
+  F05_money_source_other gps:Latitude
+1                     NA    -19.11226
+2                     NA    -19.11248
+3                     NA    -19.11211
+4                     NA    -19.11223
+5                     NA    -19.11222
+6                     NA    -19.11220
+                                                                                     E_no_group
+1                                  no_need, no_need, maize, maize, NA, NA, no, no, NA, NA, 1, 2
+2                                                                                          NULL
+3                                                                land_far, maize, NA, no, NA, 1
+4 no_need, no_need, no_need, maize, maize, sorghum, NA, NA, NA, no, no, no, NA, NA, NA, 1, 2, 3
+5                                land_far, land_far, maize, maize, NA, NA, no, no, NA, NA, 1, 2
+6                                                                land_far, maize, NA, no, NA, 1
+  F14_items_owned_other F08_emply_lab _members_count
+1                    NA            no              3
+2                    NA           yes              7
+3                    NA            no             10
+4                    NA            no              7
+5                    NA            no              7
+6                    NA            no              3
+</code></pre></div></div>
+
+<p>Looking good, but you might notice that actually we have a variable, <em>F_liv</em> that is a list of dataframes! It is very important to know what you are expecting from your data to be able to look for things like this. For example, if you are getting your JSON from an API, have a look at the API documentation, so you know what to look for.</p>
+
+<p>So what can we do about this column of dataframes? Well first things first, we can example each one. For  example to access the dataframe in the first row, we can use the  bracket (<code class="language-plaintext highlighter-rouge">[</code>) subsetting. Here we use single bracket, but you could also use double bracket (<code class="language-plaintext highlighter-rouge">[[</code>). The <code class="language-plaintext highlighter-rouge">[[</code> form allows only a single element to be selected using integer or character indices, whereas <code class="language-plaintext highlighter-rouge">[</code> allows indexing by vectors.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">json_data</span><span class="o">$</span><span class="n">F_liv</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1]]
+  F11_no_owned F_curr_liv
+1            1    poultry
+</code></pre></div></div>
+
+<p>We can also choose to view the nested dataframes at all the rows of our main dataframe where a particular condition is met (for example where the value for the variable <em>C06_rooms</em> is equal to 4):</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">json_data</span><span class="o">$</span><span class="n">F_liv</span><span class="p">[</span><span class="n">which</span><span class="p">(</span><span class="n">json_data</span><span class="o">$</span><span class="n">C06_rooms</span><span class="o">==</span><span class="m">4</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1]]
+  F11_no_owned F_curr_liv
+1            3       oxen
+2            2       cows
+3            5      goats
+
+[[2]]
+  F11_no_owned F_curr_liv
+1            4       oxen
+2            5       cows
+3            3      goats
+
+[[3]]
+data frame with 0 columns and 0 rows
+
+[[4]]
+  F11_no_owned F_curr_liv
+1            4       oxen
+2            4       cows
+3            4      goats
+4            1      sheep
+
+[[5]]
+  F11_no_owned F_curr_liv
+1            2       cows
+</code></pre></div></div>
+
+<h2 id="write-the-json-file-to-csv">Write the JSON file to csv</h2>
+
+<p>If we try to write our json_data dataframe to a csv as we would usuall in a regular dataframe, we will get an error that tells us we have an “unimplemented type ‘list’ in ‘EncodeElement’”. This is because of the columns in our dataframes which are lists, or nested dataframes. You can try yourself:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">write.csv</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"SAFI_from_JSON.csv"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To write out as a csv, we will need to “flatten” these columns. One thing you can do to achieve this is to turn all of the columns of your dataframe to “character” types.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flattened_json_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="n">as.character</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now you can write this to a csv file:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">write.csv</span><span class="p">(</span><span class="n">flattened_json_data</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data_output/SAFI_from_JSON.csv"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note: this means that when you read this csv back into R, the column of the nested dataframes will now be read in as a character vector. Converting it back to list to extract elements might be complicated, so it is probably better to keep storing these data in a JSON format if you will have to do this.</p>
+
+<p>You can also write out the individual nested dataframes to a csv. For example:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">write.csv</span><span class="p">(</span><span class="n">json_data</span><span class="o">$</span><span class="n">F_liv</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data_output/F_liv_row1.csv"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+
+
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>JSON is a popular data format for transferring data used by a great many Web based APIs</p>
+</li>
+    
+    <li><p>The complex structure of a JSON document means that it cannot easily be ‘flattened’ into tabular data</p>
+</li>
+    
+    <li><p>We can use R code to extract values of interest and place them in a csv file</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../04-ggplot2/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-6 license" id="license-info" align="left">
+	
+	Licensed under <a href="">CC-BY 4.0</a> 2018–2020
+	by <a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Licensed under <a href="">CC-BY 4.0</a> 2016–2018
+	by <a href="http://datacarpentry.org">Data Carpentry</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	
+	<a href="/edit//_episodes_rmd/0x-json.Rmd" data-checker-ignore>Edit on GitHub</a>
+	
+	
+	/
+	<a href="/blob//CONTRIBUTING.md" data-checker-ignore>Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION" data-checker-ignore>Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

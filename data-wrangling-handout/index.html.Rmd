@@ -1,0 +1,564 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2020-10-09 11:36:08 +0000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+    <link rel="license" href="#license-info" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/dc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/dc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/dc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/dc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/dc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/dc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/dc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/dc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Data Carpentry - R for Social Scientists"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/dc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/dc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/dc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/dc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/dc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  <title>
+  Code Handout &ndash; R for Social Scientists
+  </title>
+
+  </head>
+  <body>
+
+    
+
+
+
+
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="http://datacarpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/dc-icon-black.svg" alt="Data Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            
+            <li><a href="../00-intro/index.html">Before we Start</a></li>
+            
+            
+            <li><a href="../01-intro-to-r/index.html">Introduction to R</a></li>
+            
+            
+            <li><a href="../02-starting-with-data/index.html">Starting with Data</a></li>
+            
+            
+            <li><a href="../03-dplyr-tidyr/index.html">Data Wrangling with dplyr and tidyr</a></li>
+            
+            
+            <li><a href="../04-ggplot2/index.html">Data Visualisation with ggplot2</a></li>
+            
+            
+            <li><a href="../0x-json/index.html">Processing JSON data</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/index.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+        
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            
+            <li><a href="../about/index.html">About</a></li>
+            
+            
+            <li><a href="../data-visualisation-handout/index.html">Code Handout - Data Visualisation with ggplot2</a></li>
+            
+            
+            <li><a href="../data-wrangling-handout/index.html">Code Handout</a></li>
+            
+            
+            <li><a href="../discuss/index.html">Discussion</a></li>
+            
+            
+            <li><a href="../figures/index.html">Figures</a></li>
+            
+            
+            <li><a href="../guide/index.html">Instructor Notes</a></li>
+            
+            
+            <li><a href="../intro-R-handout/index.html">Code Handout - Introduction to R</a></li>
+            
+            
+            <li><a href="../starting-with-data-handout/index.html">Code Handout - Starting with Data</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	<li><a href="/edit//_extras/data-wrangling-handout.Rmd" data-checker-ignore>Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="maintitle"><a href="../">R for Social Scientists</a>: Code Handout</h1>
+
+
+
+<article>
+```{r, include = FALSE}
+knitr::opts_chunk$set(fig.width = 3, 
+                  fig.height = 3, 
+                  message = FALSE, 
+                  warning = FALSE,
+                  eval = FALSE)
+
+```
+
+This document contains all of the functions that we have covered thus far in the
+course. It will be updated every week, after we've added new skills. Each 
+function is presented alongside an example of how it is used. 
+
+All of the examples below are in the context of the Palmer Penguins, found 
+[here (link)](https://allisonhorst.github.io/palmerpenguins/index.html). 
+
+
+
+## Packages
+
+- `library()` -- loads packages into your `R` session
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+
+
+## Inspecting Data
+
+- `glimpse()` -- shows a summary of the dataset, the number of rows and columns, 
+variable names, and the first 10 entries of each variable 
+```{r}
+glimpse(penguins)
+```
+
+
+
+## Working with Data
+
+- `<-` -- "assignment arrow", assigns a value (vector, dataframe, single value)
+to the name of a variable 
+```{r}
+penguins_2007 <- penguins %>% 
+  filter(year == 2007)
+```
+
+
+
+- `c()` -- the "concatenate" function combines inputs to form a vector, the 
+values have to be the same data type. 
+
+```{r}
+cat_variables <- c("Species", "Island", "Sex")
+```
+
+\newpage
+
+## Verbs of Data Wrangling
+
+- `select()` -- selects variables (columns) from a dataframe 
+```{r}
+penguins %>% 
+select(species)
+```
+
+- `filter()` -- filters observations (rows) out of / into a dataframe, where
+the inputs (arguments) are the conditions to be satisfied in the data that are
+kept 
+```{r}
+## It's nice to have a new line for each condition, so your code is easier to read!
+penguins %>% 
+filter(species == "Adelie",
+       body_mass_g > 3000,
+       year == 2008)
+
+```
+
+**Logical operators:** Filtering for certain observations (e.g. flights from a
+particular airport) is often of interest in data frames where we might want to
+examine observations with certain characteristics separately from the rest of
+the data. To do so, you can use the `filter` function and a series of **logical
+operators**. The most commonly used logical operators for data analysis are as
+follows:
+
+-   `==` means "equal to"
+-   `!=` means "not equal to"
+-   `>` or `<` means "greater than" or "less than"
+-   `>=` or `<=` means "greater than or equal to" or "less than or equal to"
+
+- `mutate()` -- creates new variables or modifies existing variables
+```{r}
+penguins %>% 
+  filter(is.na(bill_length_mm) != TRUE, 
+         is.na(bill_depth_mm) != TRUE) %>% 
+  mutate(body_mass_kg = body_mass_g / 1000)
+```
+
+
+- `group_by()` -- groups the dataframe based on levels of a categorical variable, 
+usually used alongside `summarize()`
+
+```{r, eval = FALSE}
+penguins %>% 
+  group_by(island)
+```
+
+
+- summarize()` -- creates data summaries of variables in a dataframe, for grouped 
+summaries use alongside `group_by()`
+
+```{r}
+penguins %>% 
+  filter(is.na(body_mass_g) != TRUE) %>% 
+  group_by(island) %>% 
+  summarize(mean_mass = mean(body_mass_g))  
+
+```
+
+
+- `ungroup()` -- removes the grouping of a dataframe, typically used after group
+summaries when additional ungrouped operations are required 
+```{r}
+penguins %>% 
+  filter(is.na(body_mass_g) != TRUE) %>% 
+  group_by(island) %>% 
+  summarize(mean_mass = mean(body_mass_g)) %>% 
+  ungroup() 
+```
+
+
+- `arrange()` -- orders a dataframe based on the values of a numerical variable, 
+paired with `desc()` to order in descending order
+
+```{r}
+penguins %>% 
+  filter(is.na(body_mass_g) != TRUE) %>% 
+  group_by(island) %>% 
+  summarize(mean_mass = mean(body_mass_g)) %>% 
+  arrange(desc(mean_mass))
+```
+
+
+- `%>%` -- the "pipe" operator, joins sequences of data wrangling steps together, 
+works with any function that has `data = ` as the first argument 
+```{r}
+penguins %>%
+  select(species, island, body_mass_g, sex, year) %>% 
+  filter(island ==   "Torgersen", 
+         is.na(body_mass_g) != TRUE) %>% 
+  group_by(species, year) %>% 
+  summarize(mean_mass = mean(body_mass_g),
+            median_mass = median(body_mass_g),
+            observations = n()) %>% 
+  arrange(desc(mean_mass))
+```
+
+
+## Other Data Wrangling Tools
+  
+- `count()` -- counts the number of observations (rows) of the different levels 
+of a categorical variable
+  * can add `sort = TRUE` to sort the table in descending order (similar to 
+  using `arrange(desc())` )
+```{r}
+penguins %>% 
+count(species)
+```
+
+- `mean()` -- finds the mean of a numerical variable, not resistant to `NA` values, 
+so either filter out prior or use `na.omit = TRUE` argument
+  * Other summary functions include:
+    +  `var()` -- find the variance of a numerical variable
+    +  `sd()` -- finds the standard deviation of a numerical variable
+    + `IQR()` -- find the innerquartile range (Q3 - Q1) of a numerical variable
+    + `median()` -- finds the median of a numerical variable 
+
+- `is.na()` -- returns a vector of `TRUE` and `FALSE` values corresponding to 
+whether a particular row of a variable was `NA` (missing)
+```{r}
+penguins %>% 
+  mutate(missing_weight = is.na(body_mass_g))
+```
+
+- `sample_n()` -- selects $n$ rows from the dataframe, based on the value of 
+`size` specified
+```{r}
+penguins %>% 
+  sample_n(size = 10)
+```
+
+- `replace_na()` -- replaces NA values with the value specified 
+  * The values to be replaced must be passed to the function (input) as a 
+  `list()` object. 
+```{r}
+penguins %>% 
+  replace_na(list(bill_length_mm = "no_measurement", 
+                  bill_depth_mm = "no_measurement")) %>% 
+  glimpse()
+```
+
+- `separate_rows()` -- separates a variable with multiple values based on the 
+delimiter specified. 
+  * Variables whose entries are stored as a list with commas or semicolons are 
+  great candidates for this function!
+  
+- `rowSums()` -- forms row sums for numeric variables 
+  * Note: In the lesson `rowSums()` was used on a `logical` variable, because
+  logical values can be numerically represented as 0 (FALSE) and 1 (TRUE)
+```{r}
+x <- tibble(x1 = 3, x2 = c(4:1, 2:5))
+rowSums(x)
+```
+
+
+## Pivoting Dataframes
+
+- `pivot_wider()` -- transforms a dataframe from long to wide format
+  * takes three principal arguments: 
+    1. the data
+    2. the *names_from* column variable whose values will become new column names
+    3. the *values_from* column variable whose values will fill the new column
+   variables.
+  * Further arguments include `values_fill` which, if set, fills in missing
+  values with the value provided.
+  
+```{r}
+wide <- penguins %>% 
+  mutate(island_logical = TRUE) %>% 
+  pivot_wider(names_from = species, 
+              values_from = island_logical, 
+              values_fill = list(island_logical = FALSE))
+
+glimpse(wide)
+```
+
+- `pivot_longer()` -- transforms a dataframe from wide to long format
+  * takes four principal arguments:
+  1. the data
+  2. *cols* are the names of the columns we use to fill the a new values variable
+   (or to drop).
+  3. the *names_to* column variable we wish to create from the *cols* provided.
+  4. the *values_to* column variable we wish to create and fill with values
+  associated with the *cols* provided.
+  
+```{r}
+wide %>% 
+  pivot_longer(cols = Adelie:Gentoo, 
+               names_to = "species", 
+               values_to = "island_logical")
+```
+
+## Extracting Data
+
+- `write_csv()` -- writes a dataframe to a csv file, output into the file path 
+specified
+
+```{r}
+write_csv(wide, path = "data/penguins_wide.csv")
+```
+
+
+</article>
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-6 license" id="license-info" align="left">
+	
+	Licensed under <a href="">CC-BY 4.0</a> 2018–2020
+	by <a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Licensed under <a href="">CC-BY 4.0</a> 2016–2018
+	by <a href="http://datacarpentry.org">Data Carpentry</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	<a href="/edit//_extras/data-wrangling-handout.Rmd" data-checker-ignore>Edit on GitHub</a>
+	
+	/
+	<a href="/blob//CONTRIBUTING.md" data-checker-ignore>Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION" data-checker-ignore>Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

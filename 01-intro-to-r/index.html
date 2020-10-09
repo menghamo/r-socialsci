@@ -1,0 +1,1231 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2020-10-09 11:36:08 +0000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+    <link rel="license" href="#license-info" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/dc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/dc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/dc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/dc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/dc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/dc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/dc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/dc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/dc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Data Carpentry - R for Social Scientists"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/dc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/dc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/dc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/dc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/dc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  <title>
+  Introduction to R &ndash; R for Social Scientists
+  </title>
+
+  </head>
+  <body>
+
+    
+
+
+
+
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="http://datacarpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/dc-icon-black.svg" alt="Data Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            
+            <li><a href="../00-intro/index.html">Before we Start</a></li>
+            
+            
+            <li><a href="../01-intro-to-r/index.html">Introduction to R</a></li>
+            
+            
+            <li><a href="../02-starting-with-data/index.html">Starting with Data</a></li>
+            
+            
+            <li><a href="../03-dplyr-tidyr/index.html">Data Wrangling with dplyr and tidyr</a></li>
+            
+            
+            <li><a href="../04-ggplot2/index.html">Data Visualisation with ggplot2</a></li>
+            
+            
+            <li><a href="../0x-json/index.html">Processing JSON data</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/index.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+        
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            
+            <li><a href="../about/index.html">About</a></li>
+            
+            
+            <li><a href="../data-visualisation-handout/index.html">Code Handout - Data Visualisation with ggplot2</a></li>
+            
+            
+            <li><a href="../data-wrangling-handout/index.html">Code Handout</a></li>
+            
+            
+            <li><a href="../discuss/index.html">Discussion</a></li>
+            
+            
+            <li><a href="../figures/index.html">Figures</a></li>
+            
+            
+            <li><a href="../guide/index.html">Instructor Notes</a></li>
+            
+            
+            <li><a href="../intro-R-handout/index.html">Code Handout - Introduction to R</a></li>
+            
+            
+            <li><a href="../starting-with-data-handout/index.html">Code Handout - Starting with Data</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	
+	<li><a href="/edit//_episodes_rmd/01-intro-to-r.Rmd" data-checker-ignore>Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../00-intro/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">R for Social Scientists</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../02-starting-with-data/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Introduction to R</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 50 min
+      <br/>
+      <strong>Exercises:</strong> 30 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>What data types are available in R?</p>
+</li>
+	
+	<li><p>What is an object?</p>
+</li>
+	
+	<li><p>How can values be initially assigned to variables of different data types?</p>
+</li>
+	
+	<li><p>What arithmetic and logical operators can be used?</p>
+</li>
+	
+	<li><p>How can subsets be extracted from vectors?</p>
+</li>
+	
+	<li><p>How does R treat missing values?</p>
+</li>
+	
+	<li><p>How can we deal with missing values in R?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Define the following terms as they relate to R: object, assign, call, function, arguments, options.</p>
+</li>
+	
+	<li><p>Assign values to objects in R.</p>
+</li>
+	
+	<li><p>Learn how to name objects.</p>
+</li>
+	
+	<li><p>Use comments to inform script.</p>
+</li>
+	
+	<li><p>Solve simple arithmetic operations in R.</p>
+</li>
+	
+	<li><p>Call functions and use arguments to change their default options.</p>
+</li>
+	
+	<li><p>Inspect the content of vectors and manipulate their content.</p>
+</li>
+	
+	<li><p>Subset and extract values from vectors.</p>
+</li>
+	
+	<li><p>Analyze vectors with missing data.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<h2 id="creating-objects-in-r">Creating objects in R</h2>
+
+<p>You can get output from R simply by typing math in the console:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">5</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 8
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">12</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">7</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.714286
+</code></pre></div></div>
+
+<p>However, to do useful and interesting things, we need to assign <em>values</em> to
+<em>objects</em>. To create an object, we need to give it a name followed by the
+assignment operator <code class="language-plaintext highlighter-rouge">&lt;-</code>, and the value we want to give it:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">area_hectares</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1.0</span><span class="w">
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;-</code> is the assignment operator. It assigns values on the right to objects on
+the left. So, after executing <code class="language-plaintext highlighter-rouge">x &lt;- 3</code>, the value of <code class="language-plaintext highlighter-rouge">x</code> is <code class="language-plaintext highlighter-rouge">3</code>. The arrow can
+be read as 3 <strong>goes into</strong> <code class="language-plaintext highlighter-rouge">x</code>.  For historical reasons, you can also use <code class="language-plaintext highlighter-rouge">=</code>
+for assignments, but not in every context. Because of the
+<a href="http://blog.revolutionanalytics.com/2008/12/use-equals-or-arrow-for-assignment.html">slight</a>
+<a href="http://r.789695.n4.nabble.com/Is-there-any-difference-between-and-tp878594p878598.html">differences</a>
+in syntax, it is good practice to always use <code class="language-plaintext highlighter-rouge">&lt;-</code> for assignments. More 
+generally we prefer the <code class="language-plaintext highlighter-rouge">&lt;-</code> syntax over <code class="language-plaintext highlighter-rouge">=</code> because it makes it clear what
+direction the assignment is operating (left assignment), and it increases the
+read-ability of the code.</p>
+
+<p>In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> (push <kbd>Alt</kbd> at the
+same time as the <kbd>-</kbd> key) will write <code class="language-plaintext highlighter-rouge">&lt;- </code> in a single keystroke in a
+PC, while typing <kbd>Option</kbd> + <kbd>-</kbd> (push <kbd>Option</kbd> at the
+same time as the <kbd>-</kbd> key) does the same in a Mac.</p>
+
+<p>Objects can be given any name such as <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">current_temperature</code>, or
+<code class="language-plaintext highlighter-rouge">subject_id</code>. You want your object names to be explicit and not too long. They
+cannot start with a number (<code class="language-plaintext highlighter-rouge">2x</code> is not valid, but <code class="language-plaintext highlighter-rouge">x2</code> is). R is case sensitive
+(e.g., <code class="language-plaintext highlighter-rouge">age</code> is different from <code class="language-plaintext highlighter-rouge">Age</code>). There are some names that
+cannot be used because they are the names of fundamental functions in R (e.g.,
+<code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">else</code>, <code class="language-plaintext highlighter-rouge">for</code>, see
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html">here</a>
+for a complete list). In general, even if it’s allowed, it’s best to not use
+other function names (e.g., <code class="language-plaintext highlighter-rouge">c</code>, <code class="language-plaintext highlighter-rouge">T</code>, <code class="language-plaintext highlighter-rouge">mean</code>, <code class="language-plaintext highlighter-rouge">data</code>, <code class="language-plaintext highlighter-rouge">df</code>, <code class="language-plaintext highlighter-rouge">weights</code>). If in
+doubt, check the help to see if the name is already in use. It’s also best to
+avoid dots (<code class="language-plaintext highlighter-rouge">.</code>) within an object name as in <code class="language-plaintext highlighter-rouge">my.dataset</code>. There are many
+functions in R with dots in their names for historical reasons, but because dots
+have a special meaning in R (for methods) and other programming languages, it’s
+best to avoid them. It is also recommended to use nouns for object names, and
+verbs for function names. It’s important to be consistent in the styling of your
+code (where you put spaces, how you name objects, etc.). Using a consistent
+coding style makes your code clearer to read for your future self and your
+collaborators. In R, three popular style guides are
+<a href="https://google.github.io/styleguide/Rguide.xml">Google’s</a>, <a href="http://jef.works/R-style-guide/">Jean
+Fan’s</a> and the
+<a href="http://style.tidyverse.org/">tidyverse’s</a>. The tidyverse’s is very
+comprehensive and may seem overwhelming at first. You can install the
+<a href="https://github.com/jimhester/lintr"><strong><code class="language-plaintext highlighter-rouge">lintr</code></strong></a> package to automatically check
+for issues in the styling of your code.</p>
+
+<blockquote class="callout">
+  <h2 id="objects-vs-variables">Objects vs. variables</h2>
+
+  <p>What are known as <code class="language-plaintext highlighter-rouge">objects</code> in <code class="language-plaintext highlighter-rouge">R</code> are known as <code class="language-plaintext highlighter-rouge">variables</code> in many other
+programming languages. Depending on the context, <code class="language-plaintext highlighter-rouge">object</code> and <code class="language-plaintext highlighter-rouge">variable</code> can
+have drastically different meanings. However, in this lesson, the two words
+are used synonymously. For more information see:
+<a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Objects">https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Objects</a></p>
+</blockquote>
+
+<p>When assigning a value to an object, R does not print anything. You
+can force R to print the value by using parentheses or by typing
+the object name:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">area_hectares</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1.0</span><span class="w">    </span><span class="c1"># doesn't print anything</span><span class="w">
+</span><span class="p">(</span><span class="n">area_hectares</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1.0</span><span class="p">)</span><span class="w">  </span><span class="c1"># putting parenthesis around the call prints the value of `area_hectares`</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">area_hectares</span><span class="w">         </span><span class="c1"># and so does typing the name of the object</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
+</code></pre></div></div>
+
+<p>Now that R has <code class="language-plaintext highlighter-rouge">area_hectares</code> in memory, we can do arithmetic with it. For
+instance, we may want to convert this area into acres (area in acres is 2.47 times the area in hectares):</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">2.47</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">area_hectares</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2.47
+</code></pre></div></div>
+
+<p>We can also change an object’s value by assigning it a new one:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">area_hectares</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2.5</span><span class="w">
+</span><span class="m">2.47</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">area_hectares</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6.175
+</code></pre></div></div>
+
+<p>This means that assigning a value to one object does not change the values of
+other objects. For example, let’s store the plot’s area in acres
+in a new object, <code class="language-plaintext highlighter-rouge">area_acres</code>:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">area_acres</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2.47</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">area_hectares</span><span class="w">
+</span></code></pre></div></div>
+
+<p>and then change <code class="language-plaintext highlighter-rouge">area_hectares</code> to 50.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">area_hectares</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">50</span><span class="w">
+</span></code></pre></div></div>
+
+<blockquote class="challenge">
+  <h2 id="exercise">Exercise</h2>
+
+  <p>What do you think is the current content of the object <code class="language-plaintext highlighter-rouge">area_acres</code>? 123.5 or
+6.175?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+
+    <p>The value of <code class="language-plaintext highlighter-rouge">area_acres</code> is still 6.175 because you have not
+re-run the line <code class="language-plaintext highlighter-rouge">area_acres &lt;- 2.47 * area_hectares</code> since
+changing the value of <code class="language-plaintext highlighter-rouge">area_hectares</code>.</p>
+  </blockquote>
+</blockquote>
+
+<h2 id="comments">Comments</h2>
+
+<p>All programming languages allow the programmer to include comments in their code. To do this in R we use the <code class="language-plaintext highlighter-rouge">#</code> character.
+Anything to the right of the <code class="language-plaintext highlighter-rouge">#</code> sign and up to the end of the line is treated as a comment and is ignored by R. You can start lines with comments
+or include them after any code on the line.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">area_hectares</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1.0</span><span class="w">			</span><span class="c1"># land area in hectares</span><span class="w">
+</span><span class="n">area_acres</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">area_hectares</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2.47</span><span class="w">	</span><span class="c1"># convert to acres</span><span class="w">
+</span><span class="n">area_acres</span><span class="w">				</span><span class="c1"># print land area in acres.</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2.47
+</code></pre></div></div>
+
+<p>RStudio makes it easy to comment or uncomment a paragraph: after selecting the
+lines you  want to comment, press at the same time on your keyboard
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd>. If you only want to comment
+out one line, you can put the cursor at any location of that line (i.e. no need
+to select the whole line), then press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> +
+<kbd>C</kbd>.</p>
+
+<blockquote class="challenge">
+  <h2 id="exercise-1">Exercise</h2>
+
+  <p>Create two variables <code class="language-plaintext highlighter-rouge">length</code> and <code class="language-plaintext highlighter-rouge">width</code> and assign them values. It should be noted that, because <code class="language-plaintext highlighter-rouge">length</code> and <code class="language-plaintext highlighter-rouge">width</code> are built-in R functions, R Studio might add “()” after length and width and if you leave the parentheses you will get unexpected results. This is why you might see other programmers abbreviate common words.
+Create a third variable <code class="language-plaintext highlighter-rouge">area</code> and give it a value based on the current values of <code class="language-plaintext highlighter-rouge">length</code> and <code class="language-plaintext highlighter-rouge">width</code>.
+Show that changing the values of either <code class="language-plaintext highlighter-rouge">length</code> and <code class="language-plaintext highlighter-rouge">width</code> does not affect the value of <code class="language-plaintext highlighter-rouge">area</code>.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">length</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2.5</span><span class="w">
+</span><span class="n">width</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">3.2</span><span class="w">
+</span><span class="n">area</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">width</span><span class="w">
+</span><span class="n">area</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 8
+</code></pre></div>    </div>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># change the values of length and width</span><span class="w">
+</span><span class="n">length</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">7.0</span><span class="w">
+</span><span class="n">width</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">6.5</span><span class="w">
+</span><span class="c1"># the value of area isn't changed</span><span class="w">
+</span><span class="n">area</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 8
+</code></pre></div>    </div>
+
+  </blockquote>
+</blockquote>
+
+<h3 id="functions-and-their-arguments">Functions and their arguments</h3>
+
+<p>Functions are “canned scripts” that automate more complicated sets of commands
+including operations assignments, etc. Many functions are predefined, or can be
+made available by importing R <em>packages</em> (more on that later). A function
+usually gets one or more inputs called <em>arguments</em>. Functions often (but not
+always) return a <em>value</em>. A typical example would be the function <code class="language-plaintext highlighter-rouge">sqrt()</code>. The
+input (the argument) must be a number, and the return value (in fact, the
+output) is the square root of that number. Executing a function (‘running it’)
+is called <em>calling</em> the function. An example of a function call is:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<p>Here, the value of <code class="language-plaintext highlighter-rouge">a</code> is given to the <code class="language-plaintext highlighter-rouge">sqrt()</code> function, the <code class="language-plaintext highlighter-rouge">sqrt()</code> function
+calculates the square root, and returns the value which is then assigned to
+the object <code class="language-plaintext highlighter-rouge">b</code>. This function is very simple, because it takes just one argument.</p>
+
+<p>The return ‘value’ of a function need not be numerical (like that of <code class="language-plaintext highlighter-rouge">sqrt()</code>),
+and it also does not need to be a single item: it can be a set of things, or
+even a dataset. We’ll see that when we read data files into R.</p>
+
+<p>Arguments can be anything, not only numbers or filenames, but also other
+objects. Exactly what each argument means differs per function, and must be
+looked up in the documentation (see below). Some functions take arguments which
+may either be specified by the user, or, if left out, take on a <em>default</em> value:
+these are called <em>options</em>. Options are typically used to alter the way the
+function operates, such as whether it ignores ‘bad values’, or what symbol to
+use in a plot.  However, if you want something specific, you can specify a value
+of your choice which will be used instead of the default.</p>
+
+<p>Let’s try a function that can take multiple arguments: <code class="language-plaintext highlighter-rouge">round()</code>.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">round</span><span class="p">(</span><span class="m">3.14159</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3
+</code></pre></div></div>
+
+<p>Here, we’ve called <code class="language-plaintext highlighter-rouge">round()</code> with just one argument, <code class="language-plaintext highlighter-rouge">3.14159</code>, and it has
+returned the value <code class="language-plaintext highlighter-rouge">3</code>.  That’s because the default is to round to the nearest
+whole number. If we want more digits we can see how to do that by getting
+information about the <code class="language-plaintext highlighter-rouge">round</code> function.  We can use <code class="language-plaintext highlighter-rouge">args(round)</code> or look at the
+help for this function using <code class="language-plaintext highlighter-rouge">?round</code>.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">args</span><span class="p">(</span><span class="n">round</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function (x, digits = 0) 
+NULL
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">?</span><span class="n">round</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We see that if we want a different number of digits, we can
+type <code class="language-plaintext highlighter-rouge">digits=2</code> or however many we want.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">round</span><span class="p">(</span><span class="m">3.14159</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3.14
+</code></pre></div></div>
+
+<p>If you provide the arguments in the exact same order as they are defined you
+don’t have to name them:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">round</span><span class="p">(</span><span class="m">3.14159</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3.14
+</code></pre></div></div>
+
+<p>And if you do name the arguments, you can switch their order:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">round</span><span class="p">(</span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14159</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3.14
+</code></pre></div></div>
+
+<p>It’s good practice to put the non-optional arguments (like the number you’re
+rounding) first in your function call, and to specify the names of all optional
+arguments.  If you don’t, someone reading your code might have to look up the
+definition of a function with unfamiliar arguments to understand what you’re
+doing.</p>
+
+<blockquote class="challenge">
+  <h2 id="exercise-2">Exercise</h2>
+
+  <p>Type in <code class="language-plaintext highlighter-rouge">?round</code> at the console and then look at the output in the Help pane.
+What other functions exist that are similar to <code class="language-plaintext highlighter-rouge">round</code>?
+How do you use the <code class="language-plaintext highlighter-rouge">digits</code> parameter in the round function?</p>
+</blockquote>
+
+<h2 id="vectors-and-data-types">Vectors and data types</h2>
+
+<p>A vector is the most common and basic data type in R, and is pretty much
+the workhorse of R. A vector is composed by a series of values, which can be
+either numbers or characters. We can assign a series of values to a vector using
+the <code class="language-plaintext highlighter-rouge">c()</code> function. For example we can create a vector of the number of household
+members for the households we’ve interviewed and assign
+it to a new object <code class="language-plaintext highlighter-rouge">hh_members</code>:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hh_members</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w">
+</span><span class="n">hh_members</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  3  7 10  6
+</code></pre></div></div>
+
+<p>A vector can also contain characters. For example, we can have
+a vector of the building material used to construct our
+interview respondents’ walls (<code class="language-plaintext highlighter-rouge">respondent_wall_type</code>):</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">respondent_wall_type</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"muddaub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"burntbricks"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sunbricks"</span><span class="p">)</span><span class="w">
+</span><span class="n">respondent_wall_type</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "muddaub"     "burntbricks" "sunbricks"  
+</code></pre></div></div>
+
+<p>The quotes around “muddaub”, etc. are essential here. Without the quotes R
+will assume there are objects called <code class="language-plaintext highlighter-rouge">muddaub</code>, <code class="language-plaintext highlighter-rouge">burntbricks</code> and <code class="language-plaintext highlighter-rouge">sunbricks</code>. As these objects
+don’t exist in R’s memory, there will be an error message.</p>
+
+<p>There are many functions that allow you to inspect the content of a
+vector. <code class="language-plaintext highlighter-rouge">length()</code> tells you how many elements are in a particular vector:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="n">hh_members</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 4
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="n">respondent_wall_type</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3
+</code></pre></div></div>
+
+<p>An important feature of a vector, is that all of the elements are the same type of data.
+The function <code class="language-plaintext highlighter-rouge">class()</code> indicates the class (the type of element) of an object:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">hh_members</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "numeric"
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">respondent_wall_type</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "character"
+</code></pre></div></div>
+
+<p>The function <code class="language-plaintext highlighter-rouge">str()</code> provides an overview of the structure of an object and its
+elements. It is a useful function when working with large and complex
+objects:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">hh_members</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> num [1:4] 3 7 10 6
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">respondent_wall_type</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> chr [1:3] "muddaub" "burntbricks" "sunbricks"
+</code></pre></div></div>
+
+<p>You can use the <code class="language-plaintext highlighter-rouge">c()</code> function to add other elements to your vector:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">possessions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"bicycle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"radio"</span><span class="p">,</span><span class="w"> </span><span class="s2">"television"</span><span class="p">)</span><span class="w">
+</span><span class="n">possessions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">possessions</span><span class="p">,</span><span class="w"> </span><span class="s2">"mobile_phone"</span><span class="p">)</span><span class="w"> </span><span class="c1"># add to the end of the vector</span><span class="w">
+</span><span class="n">possessions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"car"</span><span class="p">,</span><span class="w"> </span><span class="n">possessions</span><span class="p">)</span><span class="w"> </span><span class="c1"># add to the beginning of the vector</span><span class="w">
+</span><span class="n">possessions</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "car"          "bicycle"      "radio"        "television"   "mobile_phone"
+</code></pre></div></div>
+
+<p>In the first line, we take the original vector <code class="language-plaintext highlighter-rouge">possessions</code>,
+add the value <code class="language-plaintext highlighter-rouge">"mobile_phone"</code> to the end of it, and save the result back into
+<code class="language-plaintext highlighter-rouge">possessions</code>. Then we add the value <code class="language-plaintext highlighter-rouge">"car"</code> to the beginning, again saving the result
+back into <code class="language-plaintext highlighter-rouge">possessions</code>.</p>
+
+<p>We can do this over and over again to grow a vector, or assemble a dataset.
+As we program, this may be useful to add results that we are collecting or
+calculating.</p>
+
+<p>An <strong>atomic vector</strong> is the simplest R <strong>data type</strong> and is a linear vector of a single type. Above, we saw
+2 of the 6 main <strong>atomic vector</strong> types  that R
+uses: <code class="language-plaintext highlighter-rouge">"character"</code> and <code class="language-plaintext highlighter-rouge">"numeric"</code> (or <code class="language-plaintext highlighter-rouge">"double"</code>). These are the basic building blocks that
+all R objects are built from. The other 4 <strong>atomic vector</strong> types are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">"logical"</code> for <code class="language-plaintext highlighter-rouge">TRUE</code> and <code class="language-plaintext highlighter-rouge">FALSE</code> (the boolean data type)</li>
+  <li><code class="language-plaintext highlighter-rouge">"integer"</code> for integer numbers (e.g., <code class="language-plaintext highlighter-rouge">2L</code>, the <code class="language-plaintext highlighter-rouge">L</code> indicates to R that it’s an integer)</li>
+  <li><code class="language-plaintext highlighter-rouge">"complex"</code> to represent complex numbers with real and imaginary parts (e.g.,
+<code class="language-plaintext highlighter-rouge">1 + 4i</code>) and that’s all we’re going to say about them</li>
+  <li><code class="language-plaintext highlighter-rouge">"raw"</code> for bitstreams that we won’t discuss further</li>
+</ul>
+
+<p>You can check the type of your vector using the <code class="language-plaintext highlighter-rouge">typeof()</code> function and inputting your vector as the argument.</p>
+
+<p>Vectors are one of the many <strong>data structures</strong> that R uses. Other important
+ones are lists (<code class="language-plaintext highlighter-rouge">list</code>), matrices (<code class="language-plaintext highlighter-rouge">matrix</code>), data frames (<code class="language-plaintext highlighter-rouge">data.frame</code>),
+factors (<code class="language-plaintext highlighter-rouge">factor</code>) and arrays (<code class="language-plaintext highlighter-rouge">array</code>).</p>
+
+<blockquote class="challenge">
+  <h2 id="exercise-3">Exercise</h2>
+
+  <p>We’ve seen that atomic vectors can be of type character, numeric (or double),
+  integer, and logical. But what happens if we try to mix these types in a
+  single vector?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+
+    <p>R implicitly converts them to all be the same type.</p>
+  </blockquote>
+
+  <p>What will happen in each of these examples? (hint: use <code class="language-plaintext highlighter-rouge">class()</code>
+to check the data type of your objects):</p>
+
+  <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">num_char</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"a"</span><span class="p">)</span><span class="w">
+ </span><span class="n">num_logical</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+ </span><span class="n">char_logical</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+ </span><span class="n">tricky</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">)</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Why do you think it happens?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+
+    <p>Vectors can be of only one data type. R tries to
+convert (coerce) the content of this vector to find a “common
+denominator” that doesn’t lose any information.</p>
+  </blockquote>
+
+  <p>How many values in <code class="language-plaintext highlighter-rouge">combined_logical</code> are <code class="language-plaintext highlighter-rouge">"TRUE"</code> (as a character) in the
+following example:</p>
+
+  <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num_logical</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span><span class="n">char_logical</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span><span class="n">combined_logical</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">num_logical</span><span class="p">,</span><span class="w"> </span><span class="n">char_logical</span><span class="p">)</span><span class="w">
+</span></code></pre></div>  </div>
+  <p> </p>
+
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+
+    <p>Only one. There is no memory of past data types, and the coercion
+happens the
+first time the vector is evaluated. Therefore, the <code class="language-plaintext highlighter-rouge">TRUE</code> in
+<code class="language-plaintext highlighter-rouge">num_logical</code>
+gets converted into a <code class="language-plaintext highlighter-rouge">1</code> before it gets converted into <code class="language-plaintext highlighter-rouge">"1"</code> in
+<code class="language-plaintext highlighter-rouge">combined_logical</code>.</p>
+  </blockquote>
+
+  <p>You’ve probably noticed that objects of different types get
+  converted into a single, shared type within a vector. In R, we
+  call converting objects from one class into another class
+  <em>coercion</em>. These conversions happen according to a hierarchy,
+  whereby some types get preferentially coerced into other
+  types. Can you draw a diagram that represents the hierarchy of how
+  these data types are coerced?</p>
+
+</blockquote>
+
+<h2 id="subsetting-vectors">Subsetting vectors</h2>
+
+<p>If we want to extract one or several values from a vector, we must provide one
+or several indices in square brackets. For instance:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">respondent_wall_type</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"muddaub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"burntbricks"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sunbricks"</span><span class="p">)</span><span class="w">
+</span><span class="n">respondent_wall_type</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "burntbricks"
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">respondent_wall_type</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "sunbricks"   "burntbricks"
+</code></pre></div></div>
+
+<p>We can also repeat the indices to create an object with more elements than the
+original one:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">more_respondent_wall_type</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">respondent_wall_type</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)]</span><span class="w">
+</span><span class="n">more_respondent_wall_type</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "muddaub"     "burntbricks" "sunbricks"   "burntbricks" "muddaub"    
+[6] "sunbricks"  
+</code></pre></div></div>
+
+<p>R indices start at 1. Programming languages like Fortran, MATLAB, Julia, and R
+start counting at 1, because that’s what human beings typically do. Languages in
+the C family (including C++, Java, Perl, and Python) count from 0 because that’s
+simpler for computers to do.</p>
+
+<h3 id="conditional-subsetting">Conditional subsetting</h3>
+
+<p>Another common way of subsetting is by using a logical vector. <code class="language-plaintext highlighter-rouge">TRUE</code> will
+select the element with the same index, while <code class="language-plaintext highlighter-rouge">FALSE</code> will not:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hh_members</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w">
+</span><span class="n">hh_members</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  3 10  6
+</code></pre></div></div>
+
+<p>Typically, these logical vectors are not typed by hand, but are the output of
+other functions or logical tests. For instance, if you wanted to select only the
+values above 5:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hh_members</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">5</span><span class="w">    </span><span class="c1"># will return logicals with TRUE for the indices that meet the condition</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE  TRUE  TRUE  TRUE
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## so we can use this to select only the values above 5</span><span class="w">
+</span><span class="n">hh_members</span><span class="p">[</span><span class="n">hh_members</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">5</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  7 10  6
+</code></pre></div></div>
+
+<p>You can combine multiple tests using <code class="language-plaintext highlighter-rouge">&amp;</code> (both conditions are true, AND) or <code class="language-plaintext highlighter-rouge">|</code>
+(at least one of the conditions is true, OR):</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hh_members</span><span class="p">[</span><span class="n">hh_members</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">hh_members</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">7</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  3 10
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hh_members</span><span class="p">[</span><span class="n">hh_members</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">hh_members</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>numeric(0)
+</code></pre></div></div>
+
+<p>Here, <code class="language-plaintext highlighter-rouge">&lt;</code> stands for “less than”, <code class="language-plaintext highlighter-rouge">&gt;</code> for “greater than”, <code class="language-plaintext highlighter-rouge">&gt;=</code> for “greater than
+or equal to”, and <code class="language-plaintext highlighter-rouge">==</code> for “equal to”. The double equal sign <code class="language-plaintext highlighter-rouge">==</code> is a test for
+numerical equality between the left and right hand sides, and should not be
+confused with the single <code class="language-plaintext highlighter-rouge">=</code> sign, which performs variable assignment (similar
+to <code class="language-plaintext highlighter-rouge">&lt;-</code>).</p>
+
+<p>A common task is to search for certain strings in a vector.  One could use the
+“or” operator <code class="language-plaintext highlighter-rouge">|</code> to test for equality to multiple values, but this can quickly
+become tedious.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">possessions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"car"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bicycle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"radio"</span><span class="p">,</span><span class="w"> </span><span class="s2">"television"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mobile_phone"</span><span class="p">)</span><span class="w">
+</span><span class="n">possessions</span><span class="p">[</span><span class="n">possessions</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"car"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">possessions</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"bicycle"</span><span class="p">]</span><span class="w"> </span><span class="c1"># returns both car and bicycle</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "car"     "bicycle"
+</code></pre></div></div>
+
+<p>The function <code class="language-plaintext highlighter-rouge">%in%</code> allows you to test if any of the elements of a search vector
+(on the left hand side) are found in the target vector (on the right hand side):</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">possessions</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"car"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bicycle"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE FALSE FALSE FALSE
+</code></pre></div></div>
+
+<p>Note that the output is the same length as the search vector on the left hand
+side, because <code class="language-plaintext highlighter-rouge">%in%</code> checks whether each element of the search vector is found
+somewhere in the target vector. Thus, you can use <code class="language-plaintext highlighter-rouge">%in%</code> to select the elements
+in the search vector that appear in your target vector:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">possessions</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"car"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bicycle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"motorcycle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"truck"</span><span class="p">,</span><span class="w"> </span><span class="s2">"boat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bus"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE FALSE FALSE FALSE
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">possessions</span><span class="p">[</span><span class="n">possessions</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"car"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bicycle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"motorcycle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"truck"</span><span class="p">,</span><span class="w"> </span><span class="s2">"boat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bus"</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "car"     "bicycle"
+</code></pre></div></div>
+
+<h2 id="missing-data">Missing data</h2>
+
+<p>As R was designed to analyze datasets, it includes the concept of missing data
+(which is uncommon in other programming languages). Missing data are represented
+in vectors as <code class="language-plaintext highlighter-rouge">NA</code>.</p>
+
+<p>When doing operations on numbers, most functions will return <code class="language-plaintext highlighter-rouge">NA</code> if the data
+you are working with include missing values. This feature
+makes it harder to overlook the cases where you are dealing with missing data.
+You can add the argument <code class="language-plaintext highlighter-rouge">na.rm=TRUE</code> to calculate the result while ignoring
+the missing values.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rooms</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w">
+</span><span class="n">mean</span><span class="p">(</span><span class="n">rooms</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] NA
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">max</span><span class="p">(</span><span class="n">rooms</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] NA
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mean</span><span class="p">(</span><span class="n">rooms</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">max</span><span class="p">(</span><span class="n">rooms</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 4
+</code></pre></div></div>
+
+<p>If your data include missing values, you may want to become familiar with the
+functions <code class="language-plaintext highlighter-rouge">is.na()</code>, <code class="language-plaintext highlighter-rouge">na.omit()</code>, and <code class="language-plaintext highlighter-rouge">complete.cases()</code>. See below for
+examples.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## Extract those elements which are not missing values.</span><span class="w">
+</span><span class="n">rooms</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">rooms</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2 1 1 4
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## Count the number of missing values.</span><span class="w">
+</span><span class="nf">sum</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">rooms</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## Returns the object with incomplete cases removed. The returned object is an atomic vector of type `"numeric"` (or `"double"`).</span><span class="w">
+</span><span class="n">na.omit</span><span class="p">(</span><span class="n">rooms</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2 1 1 4
+attr(,"na.action")
+[1] 4
+attr(,"class")
+[1] "omit"
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## Extract those elements which are complete cases. The returned object is an atomic vector of type `"numeric"` (or `"double"`).</span><span class="w">
+</span><span class="n">rooms</span><span class="p">[</span><span class="n">complete.cases</span><span class="p">(</span><span class="n">rooms</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2 1 1 4
+</code></pre></div></div>
+<p>Recall that you can use the <code class="language-plaintext highlighter-rouge">typeof()</code> function to find the type of your atomic vector.</p>
+
+<blockquote class="challenge">
+  <h2 id="exercise-4">Exercise</h2>
+
+  <ol>
+    <li>
+      <p>Using this vector of rooms, create a new vector with the NAs removed.</p>
+
+      <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">rooms</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+</span></code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Use the function <code class="language-plaintext highlighter-rouge">median()</code> to calculate the median of the <code class="language-plaintext highlighter-rouge">rooms</code> vector.</p>
+    </li>
+    <li>
+      <p>Use R to figure out how many households in the set use more than 2 rooms for sleeping.</p>
+    </li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-5">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rooms</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+</span><span class="n">rooms_no_na</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rooms</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">rooms</span><span class="p">)]</span><span class="w">
+</span><span class="c1"># or</span><span class="w">
+</span><span class="n">rooms_no_na</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">na.omit</span><span class="p">(</span><span class="n">rooms</span><span class="p">)</span><span class="w">
+</span><span class="c1"># 2.</span><span class="w">
+</span><span class="n">median</span><span class="p">(</span><span class="n">rooms</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
+</code></pre></div>    </div>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 3.</span><span class="w">
+</span><span class="n">rooms_above_2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rooms_no_na</span><span class="p">[</span><span class="n">rooms_no_na</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w">
+</span><span class="nf">length</span><span class="p">(</span><span class="n">rooms_above_2</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 4
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<p>Now that we have learned how to write scripts, and the basics of R’s data
+structures, we are ready to start working with the SAFI dataset we have been
+using in the other lessons, and learn about data frames.</p>
+
+
+
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Access individual values by location using <code class="language-plaintext highlighter-rouge">[]</code>.</p>
+</li>
+    
+    <li><p>Access arbitrary sets of data using <code class="language-plaintext highlighter-rouge">[c(...)]</code>.</p>
+</li>
+    
+    <li><p>Use logical operations and logical vectors to access subsets of data.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../00-intro/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../02-starting-with-data/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-6 license" id="license-info" align="left">
+	
+	Licensed under <a href="">CC-BY 4.0</a> 2018–2020
+	by <a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Licensed under <a href="">CC-BY 4.0</a> 2016–2018
+	by <a href="http://datacarpentry.org">Data Carpentry</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	
+	<a href="/edit//_episodes_rmd/01-intro-to-r.Rmd" data-checker-ignore>Edit on GitHub</a>
+	
+	
+	/
+	<a href="/blob//CONTRIBUTING.md" data-checker-ignore>Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION" data-checker-ignore>Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
